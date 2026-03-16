@@ -15,8 +15,8 @@ export async function POST(req) {
     .from("reservations")
     .insert([
       {
-        name，
-        duration，
+        name,
+        duration,
         service,
         date,
         time,
