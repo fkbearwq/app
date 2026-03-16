@@ -1,15 +1,10 @@
+// 3/15/2026 
 "use client";
+
 import { useMemo, useState } from "react";
 
 export default function Page() {
   const emailAddress = "orcachartergroup@gmail.com";
-
-  const formatLocalDate = (date) => {
-    const year = date.getFullYear();
-    const month = `${date.getMonth() + 1}`.padStart(2, "0");
-    const day = `${date.getDate()}`.padStart(2, "0");
-    return `${year}-${month}-${day}`;
-  };
 
   const bookedDates = new Set([
     "2026-03-21",
@@ -25,80 +20,88 @@ export default function Page() {
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
 
-  const handleReservationSubmit = async (e) => {
-  e.preventDefault();
-
-  const form = e.target;
-
-  const data = {
-    service: form.service?.value,
-    date: selectedDate,
-    time: selectedTime,
-    pickup: form.pickup?.value,
-    destination: form.destination?.value,
-    passengers: form.passengers?.value,
-    phone: form.phone?.value,
-    notes: form.notes?.value
+  const formatLocalDate = (date) => {
+    const year = date.getFullYear();
+    const month = `${date.getMonth() + 1}`.padStart(2, "0");
+    const day = `${date.getDate()}`.padStart(2, "0");
+    return `${year}-${month}-${day}`;
   };
 
-  const res = await fetch("/api/reservation", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  });
-
-  if (res.ok) {
-    alert("Reservation submitted!");
-    form.reset();
-  } else {
-    alert("Something went wrong.");
-  }
-};
+  const handleReservationSubmit = async (e) => {
+    e.preventDefault();
 
     const form = e.target;
-    const service = form.service?.value || "";
-    const date = selectedDate || form.date?.value || "";
-    const time = selectedTime || form.time?.value || "";
-    const pickup = form.pickup?.value || "";
-    const destination = form.destination?.value || "";
-    const passengers = form.passengers?.value || "";
-    const phone = form.phone?.value || "";
-    const notes = form.notes?.value || "";
 
-    if (!date) {
+    const data = {
+      name: form.name?.value || "",
+      duration: form.duration?.value || "",
+      service: form.service?.value || "",
+      date: selectedDate || form.date?.value || "",
+      time: selectedTime || form.time?.value || "",
+      pickup: form.pickup?.value || "",
+      destination: form.destination?.value || "",
+      passengers: form.passengers?.value || "",
+      phone: form.phone?.value || "",
+      notes: form.notes?.value || "",
+    };
+
+    if (!data.date) {
       alert("Please select a date.");
       return;
     }
 
-    if (!time) {
+    if (!data.time) {
       alert("Please select a time.");
       return;
     }
 
-    if (bookedDates.has(date)) {
+    if (bookedDates.has(data.date)) {
       alert("This date is already booked. Please choose another date.");
       return;
     }
 
-    const subject = encodeURIComponent(
-      "New Reservation Request - Orca Charter Group"
-    );
+    try {
+      const res = await fetch("/api/reservation", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-    const body = encodeURIComponent(
-      `New reservation request from website:\n\n` +
-        `Service: ${service}\n` +
-        `Date: ${date}\n` +
-        `Time: ${time}\n` +
-        `Pickup Location: ${pickup}\n` +
-        `Destination: ${destination}\n` +
-        `Passengers: ${passengers}\n` +
-        `Phone: ${phone}\n\n` +
-        `Notes:\n${notes}`
-    );
+      const result = await res.json();
 
-    window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
+      if (!res.ok) {
+        throw new Error(result.error || "Failed to submit reservation.");
+      }
+
+      alert("Reservation submitted successfully.");
+      form.reset();
+      setSelectedDate("");
+      setSelectedTime("");
+    } catch (error) {
+      console.error(error);
+
+      const subject = encodeURIComponent(
+        "New Reservation Request - Orca Charter Group"
+      );
+
+      const body = encodeURIComponent(
+        `New reservation request from website:\n\n` +
+          `Guest Name: ${data.name}\n` +
+          `Service: ${data.service}\n` +
+          `Duration: ${data.duration}\n` +
+          `Date: ${data.date}\n` +
+          `Time: ${data.time}\n` +
+          `Pickup Location: ${data.pickup}\n` +
+          `Destination: ${data.destination}\n` +
+          `Passengers: ${data.passengers}\n` +
+          `Phone: ${data.phone}\n\n` +
+          `Notes:\n${data.notes}`
+      );
+
+      window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
+    }
   };
 
   const monthLabel = new Intl.DateTimeFormat("en-US", {
@@ -199,6 +202,7 @@ export default function Page() {
               Orca Charter Group
             </div>
           </div>
+
           <nav className="hidden gap-8 text-sm text-zinc-600 md:flex">
             <a href="#services" className="transition hover:text-zinc-900">
               Services
@@ -216,6 +220,7 @@ export default function Page() {
               Contact
             </a>
           </nav>
+
           <a
             href="#booking"
             className="rounded-2xl bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:opacity-90"
@@ -232,14 +237,19 @@ export default function Page() {
             <div className="mb-4 inline-flex w-fit rounded-full border border-zinc-300 bg-white px-4 py-1 text-xs uppercase tracking-[0.28em] text-zinc-600">
               Luxury Sprinter Charter in Seattle
             </div>
+
             <h1 className="max-w-xl text-5xl font-semibold leading-tight tracking-tight lg:text-6xl">
-              Private Mercedes Sprinter service for airport, tours, and executive travel.
+              Private Mercedes Sprinter service for airport, tours, and executive
+              travel.
             </h1>
+
             <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-600">
-              Orca Charter Group offers premium private transportation across Seattle,
-              Bellevue, SeaTac, and the Pacific Northwest. Clean vehicles, smooth service,
-              and flexible booking for travelers, families, and corporate groups.
+              Orca Charter Group offers premium private transportation across
+              Seattle, Bellevue, SeaTac, and the Pacific Northwest. Clean vehicles,
+              smooth service, and flexible booking for travelers, families, and
+              corporate groups.
             </p>
+
             <div className="mt-8 flex flex-wrap gap-4">
               <a
                 href="#contact"
@@ -254,6 +264,7 @@ export default function Page() {
                 View Services
               </a>
             </div>
+
             <div className="mt-10 grid gap-3 sm:grid-cols-2">
               {highlights.map((item) => (
                 <div
@@ -276,8 +287,8 @@ export default function Page() {
                   Executive Airport &amp; City Transfers
                 </div>
                 <p className="mt-4 max-w-md text-zinc-300">
-                  Simple flat-rate options for Seattle airport pickups, downtown hotel
-                  transfers, Bellevue rides, and custom group transportation.
+                  Simple flat-rate options for Seattle airport pickups, downtown
+                  hotel transfers, Bellevue rides, and custom group transportation.
                 </p>
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
                   <div className="rounded-2xl bg-white/10 p-5">
@@ -292,8 +303,8 @@ export default function Page() {
                   </div>
                 </div>
                 <div className="mt-8 rounded-2xl border border-white/10 p-5 text-sm text-zinc-300">
-                  Ideal for airport pickups, hotel transfers, family groups, corporate
-                  clients, and customized Seattle-area service.
+                  Ideal for airport pickups, hotel transfers, family groups,
+                  corporate clients, and customized Seattle-area service.
                 </div>
               </div>
             </div>
@@ -310,10 +321,11 @@ export default function Page() {
             Premium transportation built around your schedule.
           </h2>
           <p className="mt-4 text-lg text-zinc-600">
-            Designed for private travelers, business clients, airport arrivals, and custom
-            Pacific Northwest itineraries.
+            Designed for private travelers, business clients, airport arrivals,
+            and custom Pacific Northwest itineraries.
           </p>
         </div>
+
         <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {services.map((service) => (
             <div
@@ -323,7 +335,9 @@ export default function Page() {
               <div className="text-xl font-semibold tracking-tight">
                 {service.title}
               </div>
-              <p className="mt-4 text-sm leading-7 text-zinc-600">{service.desc}</p>
+              <p className="mt-4 text-sm leading-7 text-zinc-600">
+                {service.desc}
+              </p>
             </div>
           ))}
         </div>
@@ -340,10 +354,11 @@ export default function Page() {
                 Clear starting rates for direct bookings.
               </h2>
               <p className="mt-4 max-w-xl text-lg text-zinc-600">
-                Final pricing can vary by pickup location, number of hours, distance,
-                event needs, and trip timing.
+                Final pricing can vary by pickup location, number of hours,
+                distance, event needs, and trip timing.
               </p>
             </div>
+
             <div className="rounded-[2rem] border border-zinc-200 bg-white p-6 shadow-sm">
               <div className="space-y-4">
                 {pricing.map((item) => (
@@ -357,8 +372,8 @@ export default function Page() {
                 ))}
               </div>
               <p className="mt-5 text-sm leading-6 text-zinc-500">
-                Contact us for custom quotes for multi-day tours, large groups, corporate
-                events, wedding transportation, and private charters.
+                Contact us for custom quotes for multi-day tours, large groups,
+                corporate events, wedding transportation, and private charters.
               </p>
             </div>
           </div>
@@ -377,14 +392,15 @@ export default function Page() {
           </div>
           <div className="space-y-5 leading-8 text-zinc-600">
             <p>
-              Orca Charter Group focuses on high-quality Mercedes Sprinter transportation
-              with a minimalist luxury feel. We serve airport transfers, city rides,
-              private tours, and group travel with a calm, professional service standard.
+              Orca Charter Group focuses on high-quality Mercedes Sprinter
+              transportation with a minimalist luxury feel. We serve airport
+              transfers, city rides, private tours, and group travel with a calm,
+              professional service standard.
             </p>
             <p>
-              Whether you need a smooth transfer from SeaTac, a private vehicle for a
-              Seattle itinerary, or an executive group shuttle, we help make the trip
-              simple, polished, and reliable.
+              Whether you need a smooth transfer from SeaTac, a private vehicle for
+              a Seattle itinerary, or an executive group shuttle, we help make the
+              trip simple, polished, and reliable.
             </p>
           </div>
         </div>
@@ -401,9 +417,9 @@ export default function Page() {
                 Reserve your trip online and check available dates.
               </h2>
               <p className="mt-4 max-w-2xl text-lg text-zinc-600">
-                Guests can choose a service, review live-style availability, select a
-                preferred date and time, and submit a reservation request directly from
-                the website.
+                Guests can choose a service, review live-style availability, select
+                a preferred date and time, and submit a reservation request
+                directly from the website.
               </p>
 
               <div className="mt-8 grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
@@ -435,11 +451,13 @@ export default function Page() {
                     </div>
 
                     <div className="grid grid-cols-7 gap-2 text-center text-xs font-medium uppercase tracking-[0.16em] text-zinc-400">
-                      {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
-                        <div key={day} className="py-2">
-                          {day}
-                        </div>
-                      ))}
+                      {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(
+                        (day) => (
+                          <div key={day} className="py-2">
+                            {day}
+                          </div>
+                        )
+                      )}
                     </div>
 
                     <div className="mt-2 grid grid-cols-7 gap-2">
@@ -454,7 +472,8 @@ export default function Page() {
                               ? "cursor-default border-zinc-100 bg-zinc-50 text-zinc-300"
                               : mappedDate.isBooked
                               ? "cursor-not-allowed border-zinc-100 bg-zinc-100 text-zinc-400"
-                              : mappedDate.available && selectedDate === mappedDate.iso
+                              : mappedDate.available &&
+                                selectedDate === mappedDate.iso
                               ? "border-zinc-900 bg-zinc-900 text-white"
                               : mappedDate.available
                               ? "border-zinc-200 bg-white text-zinc-700 hover:border-zinc-900"
@@ -503,6 +522,7 @@ export default function Page() {
               <div className="text-sm uppercase tracking-[0.2em] text-zinc-500">
                 Reservation Form
               </div>
+
               <form onSubmit={handleReservationSubmit} className="mt-6 grid gap-4">
                 <div>
                   <label className="mb-2 block text-sm font-medium text-zinc-700">
@@ -587,6 +607,44 @@ export default function Page() {
                   </div>
                   <div>
                     <label className="mb-2 block text-sm font-medium text-zinc-700">
+                      Guest Name
+                    </label>
+                    <input
+                      name="name"
+                      type="text"
+                      placeholder="Full name"
+                      className="w-full rounded-2xl border border-zinc-200 px-4 py-3 text-sm outline-none transition focus:border-zinc-900"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-zinc-700">
+                      Trip Duration
+                    </label>
+                    <select
+                      name="duration"
+                      className="w-full rounded-2xl border border-zinc-200 px-4 py-3 text-sm outline-none transition focus:border-zinc-900"
+                    >
+                      <option value="">Select duration</option>
+                      <option value="1 hour">1 hour</option>
+                      <option value="2 hours">2 hours</option>
+                      <option value="3 hours">3 hours</option>
+                      <option value="4 hours">4 hours</option>
+                      <option value="5 hours">5 hours</option>
+                      <option value="6 hours">6 hours</option>
+                      <option value="7 hours">7 hours</option>
+                      <option value="8 hours">8 hours</option>
+                      <option value="9 hours">9 hours</option>
+                      <option value="10 hours">10 hours</option>
+                      <option value="Full Day">Full Day</option>
+                      <option value="Multi-Day">Multi-Day</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-zinc-700">
                       Contact Phone
                     </label>
                     <input
@@ -616,8 +674,8 @@ export default function Page() {
                     <span className="font-semibold text-zinc-900">$50</span>
                   </div>
                   <div className="mt-2 text-xs leading-6 text-zinc-500">
-                    This version is ready to be upgraded later for Stripe, database, and
-                    automated confirmation emails.
+                    This version is ready to be upgraded later for Stripe,
+                    database, and automated confirmation emails.
                   </div>
                 </div>
 
@@ -642,8 +700,8 @@ export default function Page() {
                   Ready to book your next ride?
                 </h2>
                 <p className="mt-4 max-w-xl text-lg leading-8 text-zinc-300">
-                  Tell us your pickup location, destination, date, passenger count, and
-                  timing. We’ll get back to you with a custom quote.
+                  Tell us your pickup location, destination, date, passenger count,
+                  and timing. We’ll get back to you with a custom quote.
                 </p>
               </div>
               <div className="grid gap-4 rounded-[2rem] border border-white/10 bg-white/5 p-6 text-sm">
@@ -687,9 +745,9 @@ export default function Page() {
               Explore the most iconic national parks near Seattle.
             </h2>
             <p className="mt-4 text-lg text-zinc-600">
-              Join our professionally guided trips to the Pacific Northwest&apos;s most
-              beautiful landscapes. You can book a private charter or join a shared
-              small-group tour.
+              Join our professionally guided trips to the Pacific Northwest&apos;s
+              most beautiful landscapes. You can book a private charter or join a
+              shared small-group tour.
             </p>
           </div>
 
@@ -697,8 +755,8 @@ export default function Page() {
             <div className="rounded-[2rem] border border-zinc-200 p-7 shadow-sm">
               <div className="text-xl font-semibold">Mt. Rainier National Park</div>
               <p className="mt-3 text-sm leading-7 text-zinc-600">
-                A classic full-day trip from Seattle featuring scenic highlights such as
-                Longmire, waterfalls, Paradise, and seasonal viewpoints.
+                A classic full-day trip from Seattle featuring scenic highlights
+                such as Longmire, waterfalls, Paradise, and seasonal viewpoints.
               </p>
               <div className="mt-4 text-sm text-zinc-500">
                 Sample Join Tour Price: From $148 / adult
@@ -708,8 +766,8 @@ export default function Page() {
             <div className="rounded-[2rem] border border-zinc-200 p-7 shadow-sm">
               <div className="text-xl font-semibold">Olympic National Park</div>
               <p className="mt-3 text-sm leading-7 text-zinc-600">
-                Travel from Seattle by scenic ferry route and explore mountain and lake
-                highlights in Olympic National Park.
+                Travel from Seattle by scenic ferry route and explore mountain and
+                lake highlights in Olympic National Park.
               </p>
               <div className="mt-4 text-sm text-zinc-500">
                 Sample Join Tour Price: From $148 / adult
@@ -719,8 +777,8 @@ export default function Page() {
             <div className="rounded-[2rem] border border-zinc-200 p-7 shadow-sm">
               <div className="text-xl font-semibold">Leavenworth Day Trip</div>
               <p className="mt-3 text-sm leading-7 text-zinc-600">
-                Visit Washington&apos;s Bavarian-style mountain village for alpine views,
-                shopping, festivals, and charming downtown streets.
+                Visit Washington&apos;s Bavarian-style mountain village for alpine
+                views, shopping, festivals, and charming downtown streets.
               </p>
               <div className="mt-4 text-sm text-zinc-500">Duration: Full Day</div>
             </div>
@@ -730,8 +788,8 @@ export default function Page() {
                 Snoqualmie Falls &amp; Scenic Waterfalls
               </div>
               <p className="mt-3 text-sm leading-7 text-zinc-600">
-                A relaxed scenic route featuring Snoqualmie Falls and nearby forest or
-                waterfall stops.
+                A relaxed scenic route featuring Snoqualmie Falls and nearby forest
+                or waterfall stops.
               </p>
               <div className="mt-4 text-sm text-zinc-500">Half Day or Full Day</div>
             </div>
@@ -754,7 +812,9 @@ export default function Page() {
             </div>
 
             <div className="rounded-[2rem] border border-zinc-200 bg-zinc-50 p-8">
-              <div className="text-xl font-semibold">Mt. Rainier Sample Itinerary</div>
+              <div className="text-xl font-semibold">
+                Mt. Rainier Sample Itinerary
+              </div>
               <ul className="mt-5 space-y-3 text-sm leading-7 text-zinc-600">
                 <li>• Morning departure from Seattle</li>
                 <li>• Enter Mount Rainier National Park</li>
@@ -784,8 +844,8 @@ export default function Page() {
             <div>
               <div className="text-xl font-semibold">Join a Small Group Tour</div>
               <p className="mt-4 leading-7 text-zinc-600">
-                Travelers can also join shared departures. This option is more affordable
-                and a great way to meet other travelers.
+                Travelers can also join shared departures. This option is more
+                affordable and a great way to meet other travelers.
               </p>
               <ul className="mt-4 space-y-2 text-sm text-zinc-600">
                 <li>• Fixed daily departures</li>
@@ -797,8 +857,9 @@ export default function Page() {
 
           <div className="mt-12 rounded-[2rem] border border-zinc-200 p-8 text-sm text-zinc-600">
             Transportation for national park tours is provided by our comfortable
-            <span className="font-semibold"> Mercedes Sprinter</span>, designed for premium
-            small-group travel with spacious seating and large windows for scenic views.
+            <span className="font-semibold"> Mercedes Sprinter</span>, designed for
+            premium small-group travel with spacious seating and large windows for
+            scenic views.
           </div>
         </div>
       </section>
