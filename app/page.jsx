@@ -25,8 +25,37 @@ export default function Page() {
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
 
-  const handleReservationSubmit = (e) => {
-    e.preventDefault();
+  const handleReservationSubmit = async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+
+  const data = {
+    service: form.service?.value,
+    date: selectedDate,
+    time: selectedTime,
+    pickup: form.pickup?.value,
+    destination: form.destination?.value,
+    passengers: form.passengers?.value,
+    phone: form.phone?.value,
+    notes: form.notes?.value
+  };
+
+  const res = await fetch("/api/reservation", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+
+  if (res.ok) {
+    alert("Reservation submitted!");
+    form.reset();
+  } else {
+    alert("Something went wrong.");
+  }
+};
 
     const form = e.target;
     const service = form.service?.value || "";
