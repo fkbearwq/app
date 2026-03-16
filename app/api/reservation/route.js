@@ -9,12 +9,14 @@ const supabase = createClient(
 export async function POST(req) {
   const body = await req.json();
 
-  const { service, date, time, pickup, destination, passengers, phone, notes } = body;
-
+  const { name, duration, service, date, time, pickup, destination, passengers, phone, notes } = body;
+  
   const { data, error } = await supabase
     .from("reservations")
     .insert([
       {
+        name，
+        duration，
         service,
         date,
         time,
