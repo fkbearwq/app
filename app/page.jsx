@@ -683,13 +683,13 @@ const [bookedDates, setBookedDates] = useState(new Set());
 
                 <div className="rounded-2xl bg-zinc-50 p-5">
                   <div className="flex items-center justify-between text-sm text-zinc-600">
-                    //<span>Reservation Deposit</span>
-                    //<span className="font-semibold text-zinc-900">$50</span>
+                    <span>Reservation Deposit</span>
+                    <span className="font-semibold text-zinc-900">$50</span>
                   </div>
-                  /*<div className="mt-2 text-xs leading-6 text-zinc-500">
+                  <div className="mt-2 text-xs leading-6 text-zinc-500">
                     This version is ready to be upgraded later for Stripe,
                     database, and automated confirmation emails.
-                  </div>*/
+                  </div>
                 </div>
 
                 <button className="rounded-2xl bg-zinc-900 px-6 py-3 text-sm font-medium text-white transition hover:opacity-90">
@@ -870,7 +870,7 @@ const [bookedDates, setBookedDates] = useState(new Set());
 
           <div className="mt-12 rounded-[2rem] border border-zinc-200 p-8 text-sm text-zinc-600">
             Transportation for national park tours is provided by our comfortable
-            <span className="font-semibold"> Mercedes Sprinter</span>, designed for
+            <span className="font-semibold"> Mercedes Sprinter/Ford Transit 350 </span>, designed for
             premium small-group travel with spacious seating and large windows for
             scenic views.
           </div>
