@@ -1,22 +1,35 @@
 // 3/15/2026 
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export default function Page() {
   const emailAddress = "orcachartergroup@gmail.com";
 
-  const bookedDates = new Set([
-    "2026-03-21",
-    "2026-03-29",
-    "2026-04-05",
-    "2026-04-18",
-  ]);
+const [bookedDates, setBookedDates] = useState(new Set());
+  const loadBookedDates = async () => {
+  try {
+    const response = await fetch("/api/booked-dates");
+    const data = await response.json();
 
-  const today = new Date();
-  const [viewDate, setViewDate] = useState(
-    new Date(today.getFullYear(), today.getMonth(), 1)
-  );
+    setBookedDates(new Set(data));
+  } catch (error) {
+    console.error("Failed to load booked dates:", error);
+  }
+};
+
+ const [today, setToday] = useState(() => new Date());
+  const [viewDate, setViewDate] = useState(() => {
+  const now = new Date();
+  return new Date(now.getFullYear(), now.getMonth(), 1);
+});
+  useEffect(() => {
+  const timer = setInterval(() => {
+    setToday(new Date());
+  }, 60 * 1000); // 每分钟刷新一次
+
+  return () => clearInterval(timer);
+}, []);
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
 
@@ -670,13 +683,13 @@ export default function Page() {
 
                 <div className="rounded-2xl bg-zinc-50 p-5">
                   <div className="flex items-center justify-between text-sm text-zinc-600">
-                    <span>Reservation Deposit</span>
-                    <span className="font-semibold text-zinc-900">$50</span>
+                    //<span>Reservation Deposit</span>
+                    //<span className="font-semibold text-zinc-900">$50</span>
                   </div>
-                  <div className="mt-2 text-xs leading-6 text-zinc-500">
+                  /*<div className="mt-2 text-xs leading-6 text-zinc-500">
                     This version is ready to be upgraded later for Stripe,
                     database, and automated confirmation emails.
-                  </div>
+                  </div>*/
                 </div>
 
                 <button className="rounded-2xl bg-zinc-900 px-6 py-3 text-sm font-medium text-white transition hover:opacity-90">
