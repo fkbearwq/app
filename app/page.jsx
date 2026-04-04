@@ -1,4 +1,4 @@
-// 3/15/2026 
+// 3/15/2026
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
@@ -6,30 +6,22 @@ import { useEffect, useMemo, useState } from "react";
 export default function Page() {
   const emailAddress = "orcachartergroup@gmail.com";
 
-const [bookedDates, setBookedDates] = useState(new Set());
-  const loadBookedDates = async () => {
-  try {
-    const response = await fetch("/api/booked-dates");
-    const data = await response.json();
+  const [bookedDates] = useState(new Set());
 
-    setBookedDates(new Set(data));
-  } catch (error) {
-    console.error("Failed to load booked dates:", error);
-  }
-};
-
- const [today, setToday] = useState(() => new Date());
+  const [today, setToday] = useState(() => new Date());
   const [viewDate, setViewDate] = useState(() => {
-  const now = new Date();
-  return new Date(now.getFullYear(), now.getMonth(), 1);
-});
-  useEffect(() => {
-  const timer = setInterval(() => {
-    setToday(new Date());
-  }, 60 * 1000); // 每分钟刷新一次
+    const now = new Date();
+    return new Date(now.getFullYear(), now.getMonth(), 1);
+  });
 
-  return () => clearInterval(timer);
-}, []);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setToday(new Date());
+    }, 60 * 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
 
@@ -40,7 +32,7 @@ const [bookedDates, setBookedDates] = useState(new Set());
     return `${year}-${month}-${day}`;
   };
 
-  const handleReservationSubmit = async (e) => {
+  const handleReservationSubmit = (e) => {
     e.preventDefault();
 
     const form = e.target;
@@ -68,53 +60,25 @@ const [bookedDates, setBookedDates] = useState(new Set());
       return;
     }
 
-    if (bookedDates.has(data.date)) {
-      alert("This date is already booked. Please choose another date.");
-      return;
-    }
+    const subject = encodeURIComponent(
+      "New Reservation Request - Orca Charter Group"
+    );
 
-    try {
-      const res = await fetch("/api/reservation", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+    const body = encodeURIComponent(
+      `New reservation request from website:\n\n` +
+        `Guest Name: ${data.name}\n` +
+        `Service: ${data.service}\n` +
+        `Duration: ${data.duration}\n` +
+        `Date: ${data.date}\n` +
+        `Time: ${data.time}\n` +
+        `Pickup Location: ${data.pickup}\n` +
+        `Destination: ${data.destination}\n` +
+        `Passengers: ${data.passengers}\n` +
+        `Phone: ${data.phone}\n\n` +
+        `Notes:\n${data.notes}`
+    );
 
-      const result = await res.json();
-
-      if (!res.ok) {
-        throw new Error(result.error || "Failed to submit reservation.");
-      }
-
-      alert("Reservation submitted successfully.");
-      form.reset();
-      setSelectedDate("");
-      setSelectedTime("");
-    } catch (error) {
-      console.error(error);
-
-      const subject = encodeURIComponent(
-        "New Reservation Request - Orca Charter Group"
-      );
-
-      const body = encodeURIComponent(
-        `New reservation request from website:\n\n` +
-          `Guest Name: ${data.name}\n` +
-          `Service: ${data.service}\n` +
-          `Duration: ${data.duration}\n` +
-          `Date: ${data.date}\n` +
-          `Time: ${data.time}\n` +
-          `Pickup Location: ${data.pickup}\n` +
-          `Destination: ${data.destination}\n` +
-          `Passengers: ${data.passengers}\n` +
-          `Phone: ${data.phone}\n\n` +
-          `Notes:\n${data.notes}`
-      );
-
-      window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
-    }
+    window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
   };
 
   const monthLabel = new Intl.DateTimeFormat("en-US", {
@@ -151,7 +115,7 @@ const [bookedDates, setBookedDates] = useState(new Set());
         available,
       };
     });
-  }, [viewDate]);
+  }, [viewDate, today, bookedDates]);
 
   const selectedDateLabel = selectedDate
     ? new Intl.DateTimeFormat("en-US", {
@@ -430,9 +394,8 @@ const [bookedDates, setBookedDates] = useState(new Set());
                 Reserve your trip online and check available dates.
               </h2>
               <p className="mt-4 max-w-2xl text-lg text-zinc-600">
-                Guests can choose a service, review live-style availability, select
-                a preferred date and time, and submit a reservation request
-                directly from the website.
+                Guests can choose a service, select a preferred date and time,
+                and send a reservation request directly by email.
               </p>
 
               <div className="mt-8 grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
@@ -683,17 +646,17 @@ const [bookedDates, setBookedDates] = useState(new Set());
 
                 <div className="rounded-2xl bg-zinc-50 p-5">
                   <div className="flex items-center justify-between text-sm text-zinc-600">
-                    <span>Reservation Deposit</span>
-                    <span className="font-semibold text-zinc-900">$50</span>
+                    <span>Booking Request</span>
+                    <span className="font-semibold text-zinc-900">By Email</span>
                   </div>
                   <div className="mt-2 text-xs leading-6 text-zinc-500">
-                    This version is ready to be upgraded later for Stripe,
-                    database, and automated confirmation emails.
+                    After clicking submit, your email app will open with your booking
+                    details pre-filled. Please send the email to complete your request.
                   </div>
                 </div>
 
                 <button className="rounded-2xl bg-zinc-900 px-6 py-3 text-sm font-medium text-white transition hover:opacity-90">
-                  Reserve Now
+                  Send Booking Request
                 </button>
               </form>
             </div>
