@@ -160,12 +160,11 @@ export default function Page() {
     "Private charter for 8–14 passengers",
   ];
 
-  const pricing = [
-    { name: "Hourly Charter", value: "$110 / hour" },
-    { name: "Airport Transfer", value: "$160+" },
-    { name: "Extended Day Rate", value: "8–10 hours available" },
-    { name: "Overtime", value: "$100 / hour after 10h" },
-  ];
+const pricing = [
+  { name: "Airport Transfer", value: "$160+" },
+  { name: "Private Charter", value: "Minimum 4 hours booking" },
+  { name: "Extended Day Rate", value: "8–10 hours available" },
+  { name: "Overtime", value: "$100 / hour after 10h" },
 
   return (
     <div className="min-h-screen bg-white text-zinc-900">
@@ -270,7 +269,7 @@ export default function Page() {
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
                   <div className="rounded-2xl bg-white/10 p-5">
                     <div className="text-sm text-zinc-400">Starting From</div>
-                    <div className="mt-2 text-2xl font-semibold">$120</div>
+                    <div className="mt-2 text-2xl font-semibold">$160+</div>
                   </div>
                   <div className="rounded-2xl bg-white/10 p-5">
                     <div className="text-sm text-zinc-400">Vehicle</div>
@@ -509,7 +508,7 @@ export default function Page() {
                     className="w-full rounded-2xl border border-zinc-200 px-4 py-3 text-sm outline-none transition focus:border-zinc-900"
                   >
                     <option>Airport Transfer</option>
-                    <option>Hourly Charter</option>
+                    <option>Pravite Charter</option>
                     <option>Private Tour</option>
                     <option>Join Small Group Tour</option>
                   </select>
