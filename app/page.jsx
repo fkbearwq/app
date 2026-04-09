@@ -162,7 +162,7 @@ export default function Page() {
 
   const pricing = [
     { name: "Hourly Charter", value: "$110 / hour" },
-    { name: "Airport Transfer", value: "$120+" },
+    { name: "Airport Transfer", value: "$160+" },
     { name: "Extended Day Rate", value: "8–10 hours available" },
     { name: "Overtime", value: "$100 / hour after 10h" },
   ];
