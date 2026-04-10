@@ -1,4 +1,3 @@
-// 3/15/2026
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
@@ -7,12 +6,13 @@ export default function Page() {
   const emailAddress = "orcachartergroup@gmail.com";
 
   const [bookedDates] = useState(new Set());
-
   const [today, setToday] = useState(() => new Date());
   const [viewDate, setViewDate] = useState(() => {
     const now = new Date();
     return new Date(now.getFullYear(), now.getMonth(), 1);
   });
+  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedTime, setSelectedTime] = useState("");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -21,9 +21,6 @@ export default function Page() {
 
     return () => clearInterval(timer);
   }, []);
-
-  const [selectedDate, setSelectedDate] = useState("");
-  const [selectedTime, setSelectedTime] = useState("");
 
   const formatLocalDate = (date) => {
     const year = date.getFullYear();
@@ -140,8 +137,8 @@ export default function Page() {
       desc: "Private Mercedes Sprinter transfers between SeaTac, downtown Seattle, Bellevue, and nearby destinations.",
     },
     {
-      title: "Hourly Charter",
-      desc: "Flexible hourly service for business travel, family groups, shopping, dining, and private events.",
+      title: "Private Charter",
+      desc: "Premium private service with a minimum 4-hour booking, ideal for business travel, events, and customized trips.",
     },
     {
       title: "Private Tours",
@@ -160,12 +157,13 @@ export default function Page() {
     "Private charter for 8–14 passengers",
   ];
 
-const pricing = [
-  { name: "Airport Transfer", value: "$160+" },
-  { name: "Private Charter", value: "Minimum 4 hours booking" },
-  { name: "Extended Day Rate", value: "8–10 hours available" },
-  { name: "Overtime", value: "$100 / hour after 10h" }
-];
+  const pricing = [
+    { name: "Airport Transfer", value: "$160+" },
+    { name: "Private Charter", value: "Minimum 4 hours booking" },
+    { name: "Extended Day Rate", value: "8–10 hours available" },
+    { name: "Overtime", value: "$100 / hour after 10h" },
+  ];
+
   return (
     <div className="min-h-screen bg-white text-zinc-900">
       <header className="sticky top-0 z-50 border-b border-zinc-200/80 bg-white/90 backdrop-blur">
@@ -447,8 +445,7 @@ const pricing = [
                               ? "cursor-default border-zinc-100 bg-zinc-50 text-zinc-300"
                               : mappedDate.isBooked
                               ? "cursor-not-allowed border-zinc-100 bg-zinc-100 text-zinc-400"
-                              : mappedDate.available &&
-                                selectedDate === mappedDate.iso
+                              : mappedDate.available && selectedDate === mappedDate.iso
                               ? "border-zinc-900 bg-zinc-900 text-white"
                               : mappedDate.available
                               ? "border-zinc-200 bg-white text-zinc-700 hover:border-zinc-900"
@@ -508,7 +505,7 @@ const pricing = [
                     className="w-full rounded-2xl border border-zinc-200 px-4 py-3 text-sm outline-none transition focus:border-zinc-900"
                   >
                     <option>Airport Transfer</option>
-                    <option>Pravite Charter</option>
+                    <option>Private Charter</option>
                     <option>Private Tour</option>
                     <option>Join Small Group Tour</option>
                   </select>
