@@ -164,8 +164,8 @@ const pricing = [
   { name: "Airport Transfer", value: "$160+" },
   { name: "Private Charter", value: "Minimum 4 hours booking" },
   { name: "Extended Day Rate", value: "8–10 hours available" },
-  { name: "Overtime", value: "$100 / hour after 10h" },
-
+  { name: "Overtime", value: "$100 / hour after 10h" }
+];
   return (
     <div className="min-h-screen bg-white text-zinc-900">
       <header className="sticky top-0 z-50 border-b border-zinc-200/80 bg-white/90 backdrop-blur">
