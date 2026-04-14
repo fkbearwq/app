@@ -164,86 +164,130 @@ export default function Page() {
     { name: "Overtime", value: "$100 / hour after 10h" },
   ];
 
+  const galleryImages = [
+    {
+      title: "Seattle Skyline",
+      subtitle: "Downtown views and premium city transportation",
+      image:
+        "https://images.unsplash.com/photo-1502175353174-a7a70e73b362?auto=format&fit=crop&w=1400&q=80",
+    },
+    {
+      title: "Mercedes Sprinter Fleet",
+      subtitle: "Executive Mercedes Sprinter vehicles for private group transportation",
+      image:
+        "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=1400&q=80",
+    },
+    {
+      title: "SeaTac Transfers",
+      subtitle: "Smooth airport pickups with clean, spacious vehicles",
+      image:
+        "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1400&q=80",
+    },
+    {
+      title: "Mt. Rainier National Park",
+      subtitle: "Iconic Pacific Northwest destination for private day tours",
+      image:
+        "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=80",
+    },
+    {
+      title: "Pacific Northwest Tours",
+      subtitle: "Private travel for Seattle, mountains, and scenic routes",
+      image:
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-white text-zinc-900">
-      <header className="sticky top-0 z-50 border-b border-zinc-200/80 bg-white/90 backdrop-blur">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/80 text-white backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-          <div>
-            <div className="text-xs uppercase tracking-[0.35em] text-zinc-500">
-              Seattle Premium Charter
-            </div>
-            <div className="text-xl font-semibold tracking-tight">
-              Orca Charter Group
+          <div className="flex items-center gap-3">
+            <img
+              src="/logo.png"
+              alt="Orca Charter Group Logo"
+              className="h-10 w-auto object-contain"
+            />
+            <div>
+              <div className="text-xs uppercase tracking-[0.35em] text-zinc-500">
+                Seattle Premium Charter
+              </div>
+              <div className="text-xl font-semibold tracking-tight text-white">
+                Orca Charter Group
+              </div>
             </div>
           </div>
 
-          <nav className="hidden gap-8 text-sm text-zinc-600 md:flex">
-            <a href="#services" className="transition hover:text-zinc-900">
+          <nav className="hidden gap-8 text-sm text-zinc-300 md:flex">
+            <a href="#services" className="transition hover:text-white">
               Services
             </a>
-            <a href="#pricing" className="transition hover:text-zinc-900">
+            <a href="#pricing" className="transition hover:text-white">
               Pricing
             </a>
-            <a href="#booking" className="transition hover:text-zinc-900">
+            <a href="#gallery" className="transition hover:text-white">
+              Gallery
+            </a>
+            <a href="#booking" className="transition hover:text-white">
               Booking
             </a>
-            <a href="#tours" className="transition hover:text-zinc-900">
-              Tours
-            </a>
-            <a href="#contact" className="transition hover:text-zinc-900">
+            <a href="#contact" className="transition hover:text-white">
               Contact
             </a>
           </nav>
 
           <a
             href="#booking"
-            className="rounded-2xl bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:opacity-90"
+            className="rounded-full border border-white/20 bg-white px-5 py-2.5 text-sm font-medium text-zinc-950 shadow-sm transition hover:bg-zinc-200"
           >
             Book Now
           </a>
         </div>
       </header>
 
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-100 via-white to-white" />
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:px-10 lg:py-28">
-          <div className="flex flex-col justify-center">
-            <div className="mb-4 inline-flex w-fit rounded-full border border-zinc-300 bg-white px-4 py-1 text-xs uppercase tracking-[0.28em] text-zinc-600">
-              Luxury Sprinter Charter in Seattle
+      <section className="relative overflow-hidden bg-zinc-950 text-white">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1800&q=80"
+            alt="Seattle luxury transportation"
+            className="h-full w-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40" />
+        </div>
+
+        <div className="relative mx-auto grid min-h-[88vh] max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:py-28">
+          <div className="max-w-3xl">
+            <div className="mb-5 inline-flex w-fit rounded-full border border-white/15 bg-white/5 px-4 py-1 text-xs uppercase tracking-[0.28em] text-zinc-300">
+              Private Chauffeur & Sprinter Service
             </div>
 
-            <h1 className="max-w-xl text-5xl font-semibold leading-tight tracking-tight lg:text-6xl">
-              Private Mercedes Sprinter service for airport, tours, and executive
-              travel.
+            <h1 className="max-w-3xl text-5xl font-semibold leading-tight tracking-tight text-white lg:text-7xl">
+              Premium ground transportation in Seattle, built for airport, business, and private travel.
             </h1>
 
-            <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-600">
-              Orca Charter Group offers premium private transportation across
-              Seattle, Bellevue, SeaTac, and the Pacific Northwest. Clean vehicles,
-              smooth service, and flexible booking for travelers, families, and
-              corporate groups.
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300 lg:text-xl">
+              Orca Charter Group delivers refined Mercedes Sprinter service for airport transfers, executive rides, private charters, and curated Pacific Northwest travel.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap gap-4">
               <a
-                href="#contact"
-                className="rounded-2xl bg-zinc-900 px-6 py-3 text-sm font-medium text-white shadow-sm transition hover:opacity-90"
+                href="#booking"
+                className="rounded-full bg-white px-7 py-3 text-sm font-medium text-zinc-950 transition hover:bg-zinc-200"
               >
-                Request a Quote
+                Reserve Your Ride
               </a>
               <a
-                href="#services"
-                className="rounded-2xl border border-zinc-300 px-6 py-3 text-sm font-medium text-zinc-900 transition hover:bg-zinc-50"
+                href="#gallery"
+                className="rounded-full border border-white/20 px-7 py-3 text-sm font-medium text-white transition hover:bg-white/10"
               >
-                View Services
+                Explore the Experience
               </a>
             </div>
 
-            <div className="mt-10 grid gap-3 sm:grid-cols-2">
+            <div className="mt-12 grid gap-4 sm:grid-cols-2">
               {highlights.map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-zinc-200 bg-white p-4 text-sm text-zinc-700 shadow-sm"
+                  className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-zinc-200 shadow-sm backdrop-blur-sm"
                 >
                   {item}
                 </div>
@@ -251,34 +295,30 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center">
-            <div className="w-full max-w-xl rounded-[2rem] border border-zinc-200 bg-white p-6 shadow-[0_20px_80px_-30px_rgba(0,0,0,0.25)]">
-              <div className="rounded-[1.5rem] bg-zinc-950 p-8 text-white">
-                <div className="text-sm uppercase tracking-[0.28em] text-zinc-400">
+          <div className="flex items-end justify-center lg:justify-end">
+            <div className="w-full max-w-lg rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_-30px_rgba(0,0,0,0.8)] backdrop-blur-xl">
+              <div className="rounded-[1.75rem] border border-white/10 bg-black/50 p-8 text-white">
+                <div className="text-xs uppercase tracking-[0.28em] text-zinc-400">
                   Featured Service
                 </div>
                 <div className="mt-3 text-3xl font-semibold">
-                  Executive Airport &amp; City Transfers
+                  Executive Airport Transfers
                 </div>
                 <p className="mt-4 max-w-md text-zinc-300">
-                  Simple flat-rate options for Seattle airport pickups, downtown
-                  hotel transfers, Bellevue rides, and custom group transportation.
+                  Direct premium transportation between SeaTac, downtown Seattle, Bellevue, luxury hotels, and private destinations.
                 </p>
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-2xl bg-white/10 p-5">
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
                     <div className="text-sm text-zinc-400">Starting From</div>
-                    <div className="mt-2 text-2xl font-semibold">$160+</div>
+                    <div className="mt-2 text-3xl font-semibold">$160+</div>
                   </div>
-                  <div className="rounded-2xl bg-white/10 p-5">
-                    <div className="text-sm text-zinc-400">Vehicle</div>
-                    <div className="mt-2 text-2xl font-semibold">
-                      Mercedes Sprinter
-                    </div>
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <div className="text-sm text-zinc-400">Minimum Charter</div>
+                    <div className="mt-2 text-3xl font-semibold">4 Hours</div>
                   </div>
                 </div>
-                <div className="mt-8 rounded-2xl border border-white/10 p-5 text-sm text-zinc-300">
-                  Ideal for airport pickups, hotel transfers, family groups,
-                  corporate clients, and customized Seattle-area service.
+                <div className="mt-8 rounded-2xl border border-white/10 p-5 text-sm leading-7 text-zinc-300">
+                  Designed for hotel guests, executive travelers, wedding transportation, airport pickups, and private group bookings.
                 </div>
               </div>
             </div>
@@ -286,68 +326,67 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="services" className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
-        <div className="max-w-2xl">
-          <div className="text-sm uppercase tracking-[0.28em] text-zinc-500">
-            Services
-          </div>
-          <h2 className="mt-3 text-4xl font-semibold tracking-tight">
-            Premium transportation built around your schedule.
-          </h2>
-          <p className="mt-4 text-lg text-zinc-600">
-            Designed for private travelers, business clients, airport arrivals,
-            and custom Pacific Northwest itineraries.
-          </p>
-        </div>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="rounded-[2rem] border border-zinc-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-            >
-              <div className="text-xl font-semibold tracking-tight">
-                {service.title}
-              </div>
-              <p className="mt-4 text-sm leading-7 text-zinc-600">
-                {service.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="pricing" className="bg-zinc-50 py-20">
+      <section id="services" className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="max-w-2xl">
+            <div className="text-sm uppercase tracking-[0.28em] text-zinc-500">
+              Services
+            </div>
+            <h2 className="mt-3 text-4xl font-semibold tracking-tight text-zinc-950 lg:text-5xl">
+              Refined transportation for every part of the journey.
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-zinc-600">
+              Built for travelers who expect clean vehicles, clear communication, and a premium booking experience.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {services.map((service) => (
+              <div
+                key={service.title}
+                className="rounded-[2rem] border border-zinc-200 bg-zinc-50 p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+              >
+                <div className="text-xl font-semibold tracking-tight text-zinc-950">
+                  {service.title}
+                </div>
+                <p className="mt-4 text-sm leading-7 text-zinc-600">
+                  {service.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" className="bg-white py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
             <div>
               <div className="text-sm uppercase tracking-[0.28em] text-zinc-500">
                 Pricing
               </div>
-              <h2 className="mt-3 text-4xl font-semibold tracking-tight">
-                Clear starting rates for direct bookings.
+              <h2 className="mt-3 text-4xl font-semibold tracking-tight text-zinc-950 lg:text-5xl">
+                Clear pricing, elevated presentation.
               </h2>
-              <p className="mt-4 max-w-xl text-lg text-zinc-600">
-                Final pricing can vary by pickup location, number of hours,
-                distance, event needs, and trip timing.
+              <p className="mt-4 max-w-xl text-lg leading-8 text-zinc-600">
+                Starting rates are presented simply, while custom itineraries and event transportation receive tailored quotes.
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-zinc-200 bg-white p-6 shadow-sm">
+            <div className="rounded-[2rem] border border-zinc-200 bg-zinc-950 p-6 shadow-xl">
               <div className="space-y-4">
                 {pricing.map((item) => (
                   <div
                     key={item.name}
-                    className="flex items-center justify-between rounded-2xl border border-zinc-100 px-5 py-4"
+                    className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-5 py-4"
                   >
-                    <span className="text-sm text-zinc-600">{item.name}</span>
-                    <span className="text-lg font-semibold">{item.value}</span>
+                    <span className="text-sm text-zinc-300">{item.name}</span>
+                    <span className="text-lg font-semibold text-white">{item.value}</span>
                   </div>
                 ))}
               </div>
-              <p className="mt-5 text-sm leading-6 text-zinc-500">
-                Contact us for custom quotes for multi-day tours, large groups,
-                corporate events, wedding transportation, and private charters.
+              <p className="mt-5 text-sm leading-7 text-zinc-400">
+                Contact us for wedding transportation, executive travel, hotel partnerships, airport groups, and multi-day private service.
               </p>
             </div>
           </div>
@@ -376,6 +415,46 @@ export default function Page() {
               a Seattle itinerary, or an executive group shuttle, we help make the
               trip simple, polished, and reliable.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" className="bg-zinc-950 py-24 text-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="max-w-2xl">
+            <div className="text-sm uppercase tracking-[0.28em] text-zinc-500">
+              Gallery
+            </div>
+            <h2 className="mt-3 text-4xl font-semibold tracking-tight lg:text-5xl">
+              The look and feel of premium Seattle transportation.
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-zinc-300">
+              A more visual presentation for airport service, executive travel, and Pacific Northwest experiences.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-2">
+            {galleryImages.map((item, index) => (
+              <div
+                key={item.title}
+                className={`group overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 ${index === 0 ? "md:col-span-2" : ""}`}
+              >
+                <div className={`${index === 0 ? "aspect-[21/8]" : "aspect-[16/10]"} relative w-full overflow-hidden`}>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-8 lg:p-10">
+                    <div className="text-2xl font-semibold tracking-tight lg:text-3xl">{item.title}</div>
+                    <p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-200 lg:text-base">
+                      {item.subtitle}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
