@@ -187,7 +187,7 @@ export default function Page() {
       title: "Mt. Rainier National Park",
       subtitle: "Iconic Pacific Northwest destination for private day tours",
       image:
-        "/seatac.jpeg",
+        "/rainier.png",
     },
     {
       title: "Pacific Northwest Tours",
