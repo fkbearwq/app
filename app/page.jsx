@@ -169,31 +169,31 @@ export default function Page() {
       title: "Seattle Skyline",
       subtitle: "Downtown views and premium city transportation",
       image:
-        "seattle.png",
+        "/seattle.png",
     },
     {
       title: "Mercedes Sprinter Fleet",
       subtitle: "Executive Mercedes Sprinter vehicles for private group transportation",
       image:
-        "sprinter.jpeg",
+        "/sprinter.jpeg",
     },
     {
       title: "SeaTac Transfers",
       subtitle: "Smooth airport pickups with clean, spacious vehicles",
       image:
-        "seatac.png",
+        "/seatac.png",
     },
     {
       title: "Mt. Rainier National Park",
       subtitle: "Iconic Pacific Northwest destination for private day tours",
       image:
-        "seatac.png",
+        "/seatac.png",
     },
     {
       title: "Pacific Northwest Tours",
       subtitle: "Private travel for Seattle, mountains, and scenic routes",
       image:
-        "northwest.png",
+        "/northwest.png",
     },
   ];
 
