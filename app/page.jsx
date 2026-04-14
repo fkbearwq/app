@@ -181,7 +181,7 @@ export default function Page() {
       title: "SeaTac Transfers",
       subtitle: "Smooth airport pickups with clean, spacious vehicles",
       image:
-        "/seatac.jpeg",
+        "/seatac.png",
     },
     {
       title: "Mt. Rainier National Park",
