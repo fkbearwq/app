@@ -169,31 +169,31 @@ export default function Page() {
       title: "Seattle Skyline",
       subtitle: "Downtown views and premium city transportation",
       image:
-        "https://images.unsplash.com/photo-1502175353174-a7a70e73b362?auto=format&fit=crop&w=1400&q=80",
+        "seattle city.png",
     },
     {
       title: "Mercedes Sprinter Fleet",
       subtitle: "Executive Mercedes Sprinter vehicles for private group transportation",
       image:
-        "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=1400&q=80",
+        "sprinter.jpeg",
     },
     {
       title: "SeaTac Transfers",
       subtitle: "Smooth airport pickups with clean, spacious vehicles",
       image:
-        "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1400&q=80",
+        "seatac.png",
     },
     {
       title: "Mt. Rainier National Park",
       subtitle: "Iconic Pacific Northwest destination for private day tours",
       image:
-        "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=80",
+        "seatac.png",
     },
     {
       title: "Pacific Northwest Tours",
       subtitle: "Private travel for Seattle, mountains, and scenic routes",
       image:
-        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80",
+        "northwest.png",
     },
   ];
 
@@ -203,7 +203,7 @@ export default function Page() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
           <div className="flex items-center gap-3">
             <img
-              src="/logo.png"
+              src="/logo.jpeg"
               alt="Orca Charter Group Logo"
               className="h-10 w-auto object-contain"
             />
