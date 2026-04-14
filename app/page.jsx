@@ -169,7 +169,7 @@ export default function Page() {
       title: "Seattle Skyline",
       subtitle: "Downtown views and premium city transportation",
       image:
-        "/seattle.png",
+        "/seattle.jpeg",
     },
     {
       title: "Mercedes Sprinter Fleet",
@@ -181,13 +181,13 @@ export default function Page() {
       title: "SeaTac Transfers",
       subtitle: "Smooth airport pickups with clean, spacious vehicles",
       image:
-        "/seatac.png",
+        "/seatac.jpeg",
     },
     {
       title: "Mt. Rainier National Park",
       subtitle: "Iconic Pacific Northwest destination for private day tours",
       image:
-        "/seatac.png",
+        "/seatac.jpeg",
     },
     {
       title: "Pacific Northwest Tours",
