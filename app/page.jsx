@@ -169,7 +169,7 @@ export default function Page() {
       title: "Seattle Skyline",
       subtitle: "Downtown views and premium city transportation",
       image:
-        "seattle city.png",
+        "seattle.png",
     },
     {
       title: "Mercedes Sprinter Fleet",
