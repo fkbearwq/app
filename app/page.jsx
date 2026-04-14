@@ -169,7 +169,7 @@ export default function Page() {
       title: "Seattle Skyline",
       subtitle: "Downtown views and premium city transportation",
       image:
-        "/seattle.jpeg",
+        "/seattle.png",
     },
     {
       title: "Mercedes Sprinter Fleet",
@@ -181,7 +181,7 @@ export default function Page() {
       title: "SeaTac Transfers",
       subtitle: "Smooth airport pickups with clean, spacious vehicles",
       image:
-        "/seatac.png",
+        "/seatac.jpeg",
     },
     {
       title: "Mt. Rainier National Park",
