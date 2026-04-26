@@ -195,20 +195,20 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-[#090909] text-[#f7f2e8]">
       <header className="sticky top-0 z-50 border-b border-[#c8a96a]/15 bg-[#090909]/85 text-white backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-10 lg:py-4">
           <div className="flex items-center gap-3">
-            <div className="rounded-2xl border border-[#c8a96a]/30 bg-[#111111] p-2 shadow-[0_0_40px_rgba(200,169,106,0.15)]">
+            <div className="rounded-2xl border border-[#c8a96a]/30 bg-[#111111] p-1.5 shadow-[0_0_40px_rgba(200,169,106,0.15)] sm:p-2">
               <img
                 src="/logo.jpeg"
                 alt="Orca Charter Group Logo"
-                className="h-16 w-auto object-contain"
+                className="h-12 w-auto object-contain sm:h-14 lg:h-16"
               />
             </div>
             <div>
-              <div className="text-xs uppercase tracking-[0.35em] text-[#c8a96a]">
+              <div className="text-[10px] uppercase tracking-[0.28em] text-[#c8a96a] sm:text-xs sm:tracking-[0.35em]">
                 Seattle Premium Charter
               </div>
-              <div className="text-xl font-semibold tracking-tight text-white">
+              <div className="text-lg font-semibold tracking-tight text-white sm:text-xl">
                 Orca Charter Group
               </div>
             </div>
@@ -234,7 +234,7 @@ export default function Page() {
 
           <a
             href="#booking"
-            className="rounded-full bg-[#c8a96a] px-5 py-2.5 text-sm font-semibold text-black shadow-[0_12px_38px_rgba(200,169,106,0.25)] transition hover:bg-[#e5cd8f]"
+            className="rounded-full bg-[#c8a96a] px-4 py-2 text-sm font-semibold text-black shadow-[0_12px_38px_rgba(200,169,106,0.25)] transition hover:bg-[#e5cd8f] sm:px-5 sm:py-2.5"
           >
             Book Now
           </a>
@@ -326,7 +326,7 @@ export default function Page() {
       </section>
 
       <section id="services" className="bg-[#f4efe6] py-24 text-[#151515]">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="max-w-2xl">
             <div className="text-sm uppercase tracking-[0.28em] text-[#9b7b3f]">
               Services
@@ -358,7 +358,7 @@ export default function Page() {
       </section>
 
       <section id="gallery" className="bg-[#090909] py-24 text-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="max-w-2xl">
             <div className="text-sm uppercase tracking-[0.28em] text-[#c8a96a]">
               Gallery
@@ -398,7 +398,7 @@ export default function Page() {
       </section>
 
       <section id="tours" className="bg-[#f4efe6] py-20 text-[#151515]">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="max-w-2xl">
             <div className="text-sm uppercase tracking-[0.28em] text-[#9b7b3f]">
               Seattle National Park Tours
@@ -458,7 +458,7 @@ export default function Page() {
           </div>
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-8 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
+            <div className="rounded-[1.5rem] border border-[#dfd3c0] bg-[#fbf8f1] p-5 shadow-[0_18px_55px_rgba(44,38,28,0.08)] sm:p-6 lg:rounded-[2rem] lg:p-8">
               <div className="text-xl font-semibold text-[#111111]">
                 Olympic National Park Sample Itinerary
               </div>
@@ -473,7 +473,7 @@ export default function Page() {
               </ul>
             </div>
 
-            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-8 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
+            <div className="rounded-[1.5rem] border border-[#dfd3c0] bg-[#fbf8f1] p-5 shadow-[0_18px_55px_rgba(44,38,28,0.08)] sm:p-6 lg:rounded-[2rem] lg:p-8">
               <div className="text-xl font-semibold text-[#111111]">
                 Mt. Rainier Sample Itinerary
               </div>
@@ -527,7 +527,7 @@ export default function Page() {
       </section>
 
       <section id="pricing" className="bg-[#f4efe6] py-24 text-[#151515]">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
             <div>
               <div className="text-sm uppercase tracking-[0.28em] text-[#9b7b3f]">
@@ -590,7 +590,7 @@ export default function Page() {
       </section>
 
       <section id="contact" className="bg-[#090909] pb-24 pt-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="rounded-[2rem] border border-[#c8a96a]/20 bg-[#0f0f0f] px-8 py-12 text-white shadow-[0_25px_90px_rgba(0,0,0,0.35)] lg:px-12 lg:py-14">
             <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
               <div>
@@ -636,8 +636,8 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="booking" className="bg-[#f4efe6] py-20 text-[#151515]">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <section id="booking" className="bg-[#f4efe6] py-14 text-[#151515] lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="grid gap-10 lg:grid-cols-[1fr_0.95fr]">
             <div>
               <div className="text-sm uppercase tracking-[0.28em] text-[#9b7b3f]">
@@ -651,8 +651,8 @@ export default function Page() {
                 and send a reservation request directly by email.
               </p>
 
-              <div className="mt-8 grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
-                <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-6 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
+              <div className="mt-6 grid gap-4 xl:grid-cols-[1.2fr_0.8fr] lg:mt-8 lg:gap-6">
+                <div className="rounded-[1.5rem] border border-[#dfd3c0] bg-[#fbf8f1] p-4 shadow-[0_18px_55px_rgba(44,38,28,0.08)] sm:p-5 lg:rounded-[2rem] lg:p-6">
                   <div className="flex items-center justify-between">
                     <div className="text-sm uppercase tracking-[0.2em] text-[#9b7b3f]">
                       Available Dates
@@ -660,8 +660,8 @@ export default function Page() {
                     <div className="text-xs text-[#8a8175]">Calendar View</div>
                   </div>
 
-                  <div className="mt-5 rounded-[1.5rem] border border-[#e6dccb] bg-white/50 p-4">
-                    <div className="mb-4 flex items-center justify-between">
+                  <div className="mt-4 rounded-[1.25rem] border border-[#e6dccb] bg-white/50 p-3 sm:p-4 lg:rounded-[1.5rem]">
+                    <div className="mb-3 flex items-center justify-between sm:mb-4">
                       <button
                         type="button"
                         onClick={goToPreviousMonth}
@@ -679,7 +679,7 @@ export default function Page() {
                       </button>
                     </div>
 
-                    <div className="grid grid-cols-7 gap-2 text-center text-xs font-medium uppercase tracking-[0.16em] text-[#8a8175]">
+                    <div className="grid grid-cols-7 gap-1.5 text-center text-[10px] font-medium uppercase tracking-[0.12em] text-[#8a8175] sm:gap-2 sm:text-xs sm:tracking-[0.16em]">
                       {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(
                         (day) => (
                           <div key={day} className="py-2">
@@ -689,14 +689,14 @@ export default function Page() {
                       )}
                     </div>
 
-                    <div className="mt-2 grid grid-cols-7 gap-2">
+                    <div className="mt-2 grid grid-cols-7 gap-1.5 sm:gap-2">
                       {calendarDays.map((mappedDate) => (
                         <button
                           key={mappedDate.iso}
                           type="button"
                           disabled={!mappedDate.available}
                           onClick={() => setSelectedDate(mappedDate.iso)}
-                          className={`aspect-square flex items-center justify-center rounded-xl border text-sm font-medium transition ${
+                          className={`aspect-square flex items-center justify-center rounded-lg border text-xs font-medium transition sm:rounded-xl sm:text-sm ${
                             !mappedDate.isCurrentMonth
                               ? "cursor-default border-[#eee5d8] bg-[#f5eee4] text-[#c3b7a6]"
                               : mappedDate.isBooked
@@ -715,7 +715,7 @@ export default function Page() {
                   </div>
                 </div>
 
-                <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-6 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
+                <div className="rounded-[1.5rem] border border-[#dfd3c0] bg-[#fbf8f1] p-4 shadow-[0_18px_55px_rgba(44,38,28,0.08)] sm:p-5 lg:rounded-[2rem] lg:p-6">
                   <div className="flex items-center justify-between">
                     <div className="text-sm uppercase tracking-[0.2em] text-[#9b7b3f]">
                       Preferred Time
@@ -723,7 +723,7 @@ export default function Page() {
                     <div className="text-xs text-[#8a8175]">Custom Time</div>
                   </div>
 
-                  <div className="mt-5 rounded-[1.5rem] border border-[#e6dccb] bg-white/50 p-4">
+                  <div className="mt-4 rounded-[1.25rem] border border-[#e6dccb] bg-white/50 p-3 sm:p-4 lg:rounded-[1.5rem]">
                     <label className="mb-3 block text-sm font-medium text-[#4c463f]">
                       Guests can choose any time
                     </label>
@@ -732,7 +732,7 @@ export default function Page() {
                       type="time"
                       value={selectedTime}
                       onChange={(e) => setSelectedTime(e.target.value)}
-                      className="h-16 w-full rounded-xl border border-[#dfd3c0] bg-white px-4 text-base font-medium text-[#111111] outline-none transition focus:border-[#c8a96a]"
+                      className="h-12 w-full rounded-xl border border-[#dfd3c0] bg-white px-4 text-sm font-medium text-[#111111] outline-none transition focus:border-[#c8a96a] sm:h-14 sm:text-base"
                     />
                     <p className="mt-3 text-xs leading-6 text-[#6f685f]">
                       Choose any available departure time that fits your schedule.
@@ -746,19 +746,19 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-8 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
+            <div className="rounded-[1.5rem] border border-[#dfd3c0] bg-[#fbf8f1] p-5 shadow-[0_18px_55px_rgba(44,38,28,0.08)] sm:p-6 lg:rounded-[2rem] lg:p-8">
               <div className="text-sm uppercase tracking-[0.2em] text-[#9b7b3f]">
                 Reservation Form
               </div>
 
-              <form onSubmit={handleReservationSubmit} className="mt-6 grid gap-4">
+              <form onSubmit={handleReservationSubmit} className="mt-5 grid gap-3 sm:mt-6 sm:gap-4">
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-[#4c463f]">
+                  <label className="mb-1.5 block text-sm font-medium text-[#4c463f] sm:mb-2">
                     Service Type
                   </label>
                   <select
                     name="service"
-                    className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a]"
+                    className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
                   >
                     <option>Airport Transfer</option>
                     <option>Private Charter</option>
@@ -769,7 +769,7 @@ export default function Page() {
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-[#4c463f]">
+                    <label className="mb-1.5 block text-sm font-medium text-[#4c463f] sm:mb-2">
                       Preferred Date
                     </label>
                     <input
@@ -777,11 +777,11 @@ export default function Page() {
                       type="date"
                       value={selectedDate}
                       onChange={(e) => setSelectedDate(e.target.value)}
-                      className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a]"
+                      className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
                     />
                   </div>
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-[#4c463f]">
+                    <label className="mb-1.5 block text-sm font-medium text-[#4c463f] sm:mb-2">
                       Preferred Time
                     </label>
                     <input
@@ -789,39 +789,39 @@ export default function Page() {
                       type="time"
                       value={selectedTime}
                       onChange={(e) => setSelectedTime(e.target.value)}
-                      className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a]"
+                      className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
                     />
                   </div>
                 </div>
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-[#4c463f]">
+                    <label className="mb-1.5 block text-sm font-medium text-[#4c463f] sm:mb-2">
                       Pickup Location
                     </label>
                     <input
                       type="text"
                       name="pickup"
                       placeholder="Seattle hotel / airport / address"
-                      className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a]"
+                      className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
                     />
                   </div>
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-[#4c463f]">
+                    <label className="mb-1.5 block text-sm font-medium text-[#4c463f] sm:mb-2">
                       Destination
                     </label>
                     <input
                       type="text"
                       name="destination"
                       placeholder="Destination"
-                      className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a]"
+                      className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
                     />
                   </div>
                 </div>
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-[#4c463f]">
+                    <label className="mb-1.5 block text-sm font-medium text-[#4c463f] sm:mb-2">
                       Passenger Count
                     </label>
                     <input
@@ -830,18 +830,18 @@ export default function Page() {
                       min="1"
                       max="15"
                       placeholder="Number of passengers"
-                      className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a]"
+                      className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
                     />
                   </div>
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-[#4c463f]">
+                    <label className="mb-1.5 block text-sm font-medium text-[#4c463f] sm:mb-2">
                       Guest Name
                     </label>
                     <input
                       name="name"
                       type="text"
                       placeholder="Full name"
-                      className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a]"
+                      className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
                       required
                     />
                   </div>
@@ -849,12 +849,12 @@ export default function Page() {
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-[#4c463f]">
+                    <label className="mb-1.5 block text-sm font-medium text-[#4c463f] sm:mb-2">
                       Trip Duration
                     </label>
                     <select
                       name="duration"
-                      className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a]"
+                      className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
                     >
                       <option value="">Select duration</option>
                       <option value="1 hour">1 hour</option>
@@ -872,31 +872,31 @@ export default function Page() {
                     </select>
                   </div>
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-[#4c463f]">
+                    <label className="mb-1.5 block text-sm font-medium text-[#4c463f] sm:mb-2">
                       Contact Phone
                     </label>
                     <input
                       name="phone"
                       type="tel"
                       placeholder="Your phone number"
-                      className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a]"
+                      className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-[#4c463f]">
+                  <label className="mb-1.5 block text-sm font-medium text-[#4c463f] sm:mb-2">
                     Special Request
                   </label>
                   <textarea
                     name="notes"
                     rows={4}
                     placeholder="Trip details, luggage, child seat, custom itinerary, or notes"
-                    className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a]"
+                    className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
                   />
                 </div>
 
-                <div className="rounded-2xl border border-[#dfd3c0] bg-[#f4efe6] p-5">
+                <div className="rounded-xl border border-[#dfd3c0] bg-[#f4efe6] p-4 sm:rounded-2xl sm:p-5">
                   <div className="flex items-center justify-between text-sm text-[#5f5a52]">
                     <span>Booking Request</span>
                     <span className="font-semibold text-[#9b7b3f]">By Email</span>
@@ -907,7 +907,7 @@ export default function Page() {
                   </div>
                 </div>
 
-                <button className="rounded-2xl bg-[#c8a96a] px-6 py-3 text-sm font-semibold text-black shadow-[0_12px_38px_rgba(200,169,106,0.25)] transition hover:bg-[#e5cd8f]">
+                <button className="rounded-xl bg-[#c8a96a] px-6 py-3 text-sm font-semibold text-black shadow-[0_12px_38px_rgba(200,169,106,0.25)] transition hover:bg-[#e5cd8f] sm:rounded-2xl">
                   Send Booking Request
                 </button>
               </form>
