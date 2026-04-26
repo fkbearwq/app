@@ -168,47 +168,44 @@ export default function Page() {
     {
       title: "Seattle Skyline",
       subtitle: "Downtown views and premium city transportation",
-      image:
-        "/seattle.png",
+      image: "/seattle.png",
     },
     {
       title: "Mercedes Sprinter Fleet",
       subtitle: "Executive Mercedes Sprinter vehicles for private group transportation",
-      image:
-        "/sprinter.jpeg",
+      image: "/sprinter.jpeg",
     },
     {
       title: "SeaTac Transfers",
       subtitle: "Smooth airport pickups with clean, spacious vehicles",
-      image:
-        "/seatac.jpeg",
+      image: "/seatac.jpeg",
     },
     {
       title: "Mt. Rainier National Park",
       subtitle: "Iconic Pacific Northwest destination for private day tours",
-      image:
-        "/rainier-1.png",
+      image: "/rainier-1.png",
     },
     {
       title: "Pacific Northwest Tours",
       subtitle: "Private travel for Seattle, mountains, and scenic routes",
-      image:
-        "/northwest.png",
+      image: "/northwest.png",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-white text-zinc-900">
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/80 text-white backdrop-blur">
+    <div className="min-h-screen bg-[#090909] text-[#f7f2e8]">
+      <header className="sticky top-0 z-50 border-b border-[#c8a96a]/15 bg-[#090909]/85 text-white backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
           <div className="flex items-center gap-3">
-            <img
-              src="/logo.jpeg"
-              alt="Orca Charter Group Logo"
-              className="h-10 w-auto object-contain"
-            />
+            <div className="rounded-2xl border border-[#c8a96a]/30 bg-[#111111] p-2 shadow-[0_0_40px_rgba(200,169,106,0.15)]">
+              <img
+                src="/logo.jpeg"
+                alt="Orca Charter Group Logo"
+                className="h-14 w-auto object-contain"
+              />
+            </div>
             <div>
-              <div className="text-xs uppercase tracking-[0.35em] text-zinc-500">
+              <div className="text-xs uppercase tracking-[0.35em] text-[#c8a96a]">
                 Seattle Premium Charter
               </div>
               <div className="text-xl font-semibold tracking-tight text-white">
@@ -217,46 +214,47 @@ export default function Page() {
             </div>
           </div>
 
-          <nav className="hidden gap-8 text-sm text-zinc-300 md:flex">
-            <a href="#services" className="transition hover:text-white">
+          <nav className="hidden gap-8 text-sm text-[#b8b0a3] md:flex">
+            <a href="#services" className="transition hover:text-[#c8a96a]">
               Services
             </a>
-            <a href="#pricing" className="transition hover:text-white">
+            <a href="#pricing" className="transition hover:text-[#c8a96a]">
               Pricing
             </a>
-            <a href="#gallery" className="transition hover:text-white">
+            <a href="#gallery" className="transition hover:text-[#c8a96a]">
               Gallery
             </a>
-            <a href="#booking" className="transition hover:text-white">
+            <a href="#booking" className="transition hover:text-[#c8a96a]">
               Booking
             </a>
-            <a href="#contact" className="transition hover:text-white">
+            <a href="#contact" className="transition hover:text-[#c8a96a]">
               Contact
             </a>
           </nav>
 
           <a
             href="#booking"
-            className="rounded-full border border-white/20 bg-white px-5 py-2.5 text-sm font-medium text-zinc-950 shadow-sm transition hover:bg-zinc-200"
+            className="rounded-full bg-[#c8a96a] px-5 py-2.5 text-sm font-semibold text-black shadow-[0_12px_38px_rgba(200,169,106,0.25)] transition hover:bg-[#e5cd8f]"
           >
             Book Now
           </a>
         </div>
       </header>
 
-      <section className="relative overflow-hidden bg-zinc-950 text-white">
+      <section className="relative overflow-hidden bg-[#090909] text-white">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1800&q=80"
             alt="Seattle luxury transportation"
-            className="h-full w-full object-cover opacity-30"
+            className="h-full w-full object-cover opacity-35"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(200,169,106,0.22),transparent_30%),linear-gradient(90deg,#090909_0%,rgba(9,9,9,0.94)_42%,rgba(9,9,9,0.58)_100%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-[#090909] to-transparent" />
         </div>
 
         <div className="relative mx-auto grid min-h-[88vh] max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:py-28">
           <div className="max-w-3xl">
-            <div className="mb-5 inline-flex w-fit rounded-full border border-white/15 bg-white/5 px-4 py-1 text-xs uppercase tracking-[0.28em] text-zinc-300">
+            <div className="mb-5 inline-flex w-fit rounded-full border border-[#c8a96a]/25 bg-[#c8a96a]/10 px-4 py-1.5 text-xs uppercase tracking-[0.28em] text-[#e5cd8f]">
               Private Chauffeur & Sprinter Service
             </div>
 
@@ -264,20 +262,20 @@ export default function Page() {
               Premium ground transportation in Seattle, built for airport, business, and private travel.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300 lg:text-xl">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#cfc6b8] lg:text-xl">
               Orca Charter Group delivers refined Mercedes Sprinter service for airport transfers, executive rides, private charters, and curated Pacific Northwest travel.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#booking"
-                className="rounded-full bg-white px-7 py-3 text-sm font-medium text-zinc-950 transition hover:bg-zinc-200"
+                className="rounded-full bg-[#c8a96a] px-7 py-3 text-sm font-semibold text-black shadow-[0_18px_50px_rgba(200,169,106,0.25)] transition hover:bg-[#e5cd8f]"
               >
                 Reserve Your Ride
               </a>
               <a
                 href="#gallery"
-                className="rounded-full border border-white/20 px-7 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+                className="rounded-full border border-[#c8a96a]/25 bg-white/[0.03] px-7 py-3 text-sm font-medium text-white transition hover:bg-[#c8a96a]/10 hover:text-[#e5cd8f]"
               >
                 Explore the Experience
               </a>
@@ -287,8 +285,9 @@ export default function Page() {
               {highlights.map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-zinc-200 shadow-sm backdrop-blur-sm"
+                  className="rounded-2xl border border-white/10 bg-white/[0.045] p-4 text-sm text-[#e8dfcf] shadow-sm backdrop-blur-sm"
                 >
+                  <span className="mr-2 text-[#c8a96a]">•</span>
                   {item}
                 </div>
               ))}
@@ -296,28 +295,28 @@ export default function Page() {
           </div>
 
           <div className="flex items-end justify-center lg:justify-end">
-            <div className="w-full max-w-lg rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_-30px_rgba(0,0,0,0.8)] backdrop-blur-xl">
-              <div className="rounded-[1.75rem] border border-white/10 bg-black/50 p-8 text-white">
-                <div className="text-xs uppercase tracking-[0.28em] text-zinc-400">
+            <div className="w-full max-w-lg rounded-[2rem] border border-[#c8a96a]/20 bg-white/[0.045] p-6 shadow-[0_30px_100px_-30px_rgba(0,0,0,0.9)] backdrop-blur-xl">
+              <div className="rounded-[1.75rem] border border-white/10 bg-[#0f0f0f]/85 p-8 text-white">
+                <div className="text-xs uppercase tracking-[0.28em] text-[#c8a96a]">
                   Featured Service
                 </div>
                 <div className="mt-3 text-3xl font-semibold">
                   Executive Airport Transfers
                 </div>
-                <p className="mt-4 max-w-md text-zinc-300">
+                <p className="mt-4 max-w-md text-[#cfc6b8]">
                   Direct premium transportation between SeaTac, downtown Seattle, Bellevue, luxury hotels, and private destinations.
                 </p>
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                    <div className="text-sm text-zinc-400">Starting From</div>
+                  <div className="rounded-2xl border border-[#c8a96a]/20 bg-[#c8a96a]/10 p-5">
+                    <div className="text-sm text-[#d6c08a]">Starting From</div>
                     <div className="mt-2 text-3xl font-semibold">$160+</div>
                   </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                    <div className="text-sm text-zinc-400">Minimum Charter</div>
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                    <div className="text-sm text-[#b8b0a3]">Minimum Charter</div>
                     <div className="mt-2 text-3xl font-semibold">4 Hours</div>
                   </div>
                 </div>
-                <div className="mt-8 rounded-2xl border border-white/10 p-5 text-sm leading-7 text-zinc-300">
+                <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm leading-7 text-[#cfc6b8]">
                   Designed for hotel guests, executive travelers, wedding transportation, airport pickups, and private group bookings.
                 </div>
               </div>
@@ -326,16 +325,16 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="services" className="bg-white py-24">
+      <section id="services" className="bg-[#f4efe6] py-24 text-[#151515]">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="max-w-2xl">
-            <div className="text-sm uppercase tracking-[0.28em] text-zinc-500">
+            <div className="text-sm uppercase tracking-[0.28em] text-[#9b7b3f]">
               Services
             </div>
-            <h2 className="mt-3 text-4xl font-semibold tracking-tight text-zinc-950 lg:text-5xl">
+            <h2 className="mt-3 text-4xl font-semibold tracking-tight text-[#111111] lg:text-5xl">
               Refined transportation for every part of the journey.
             </h2>
-            <p className="mt-4 text-lg leading-8 text-zinc-600">
+            <p className="mt-4 text-lg leading-8 text-[#5f5a52]">
               Built for travelers who expect clean vehicles, clear communication, and a premium booking experience.
             </p>
           </div>
@@ -344,12 +343,12 @@ export default function Page() {
             {services.map((service) => (
               <div
                 key={service.title}
-                className="rounded-[2rem] border border-zinc-200 bg-zinc-50 p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-8 shadow-[0_18px_55px_rgba(44,38,28,0.08)] transition hover:-translate-y-1 hover:border-[#c8a96a] hover:shadow-xl"
               >
-                <div className="text-xl font-semibold tracking-tight text-zinc-950">
+                <div className="text-xl font-semibold tracking-tight text-[#111111]">
                   {service.title}
                 </div>
-                <p className="mt-4 text-sm leading-7 text-zinc-600">
+                <p className="mt-4 text-sm leading-7 text-[#645e55]">
                   {service.desc}
                 </p>
               </div>
@@ -358,34 +357,34 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="pricing" className="bg-white py-24">
+      <section id="pricing" className="bg-[#f4efe6] py-24 text-[#151515]">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
             <div>
-              <div className="text-sm uppercase tracking-[0.28em] text-zinc-500">
+              <div className="text-sm uppercase tracking-[0.28em] text-[#9b7b3f]">
                 Pricing
               </div>
-              <h2 className="mt-3 text-4xl font-semibold tracking-tight text-zinc-950 lg:text-5xl">
+              <h2 className="mt-3 text-4xl font-semibold tracking-tight text-[#111111] lg:text-5xl">
                 Clear pricing, elevated presentation.
               </h2>
-              <p className="mt-4 max-w-xl text-lg leading-8 text-zinc-600">
+              <p className="mt-4 max-w-xl text-lg leading-8 text-[#5f5a52]">
                 Starting rates are presented simply, while custom itineraries and event transportation receive tailored quotes.
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-zinc-200 bg-zinc-950 p-6 shadow-xl">
+            <div className="rounded-[2rem] border border-[#c8a96a]/25 bg-[#0f0f0f] p-6 shadow-[0_25px_90px_rgba(0,0,0,0.22)]">
               <div className="space-y-4">
                 {pricing.map((item) => (
                   <div
                     key={item.name}
-                    className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-5 py-4"
+                    className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.045] px-5 py-4"
                   >
-                    <span className="text-sm text-zinc-300">{item.name}</span>
+                    <span className="text-sm text-[#cfc6b8]">{item.name}</span>
                     <span className="text-lg font-semibold text-white">{item.value}</span>
                   </div>
                 ))}
               </div>
-              <p className="mt-5 text-sm leading-7 text-zinc-400">
+              <p className="mt-5 text-sm leading-7 text-[#a9a092]">
                 Contact us for wedding transportation, executive travel, hotel partnerships, airport groups, and multi-day private service.
               </p>
             </div>
@@ -393,42 +392,44 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="about" className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
-        <div className="grid gap-10 rounded-[2rem] border border-zinc-200 bg-white p-8 shadow-sm lg:grid-cols-2 lg:p-12">
-          <div>
-            <div className="text-sm uppercase tracking-[0.28em] text-zinc-500">
-              About
+      <section id="about" className="bg-[#f4efe6] px-6 py-20 text-[#151515] lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-8 shadow-[0_18px_55px_rgba(44,38,28,0.08)] lg:grid-cols-2 lg:p-12">
+            <div>
+              <div className="text-sm uppercase tracking-[0.28em] text-[#9b7b3f]">
+                About
+              </div>
+              <h2 className="mt-3 text-4xl font-semibold tracking-tight text-[#111111]">
+                A cleaner, more premium charter experience in Seattle.
+              </h2>
             </div>
-            <h2 className="mt-3 text-4xl font-semibold tracking-tight">
-              A cleaner, more premium charter experience in Seattle.
-            </h2>
-          </div>
-          <div className="space-y-5 leading-8 text-zinc-600">
-            <p>
-              Orca Charter Group focuses on high-quality Mercedes Sprinter
-              transportation with a minimalist luxury feel. We serve airport
-              transfers, city rides, private tours, and group travel with a calm,
-              professional service standard.
-            </p>
-            <p>
-              Whether you need a smooth transfer from SeaTac, a private vehicle for
-              a Seattle itinerary, or an executive group shuttle, we help make the
-              trip simple, polished, and reliable.
-            </p>
+            <div className="space-y-5 leading-8 text-[#5f5a52]">
+              <p>
+                Orca Charter Group focuses on high-quality Mercedes Sprinter
+                transportation with a minimalist luxury feel. We serve airport
+                transfers, city rides, private tours, and group travel with a calm,
+                professional service standard.
+              </p>
+              <p>
+                Whether you need a smooth transfer from SeaTac, a private vehicle for
+                a Seattle itinerary, or an executive group shuttle, we help make the
+                trip simple, polished, and reliable.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="gallery" className="bg-zinc-950 py-24 text-white">
+      <section id="gallery" className="bg-[#090909] py-24 text-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="max-w-2xl">
-            <div className="text-sm uppercase tracking-[0.28em] text-zinc-500">
+            <div className="text-sm uppercase tracking-[0.28em] text-[#c8a96a]">
               Gallery
             </div>
             <h2 className="mt-3 text-4xl font-semibold tracking-tight lg:text-5xl">
               The look and feel of premium Seattle transportation.
             </h2>
-            <p className="mt-4 text-lg leading-8 text-zinc-300">
+            <p className="mt-4 text-lg leading-8 text-[#cfc6b8]">
               A more visual presentation for airport service, executive travel, and Pacific Northwest experiences.
             </p>
           </div>
@@ -437,7 +438,7 @@ export default function Page() {
             {galleryImages.map((item, index) => (
               <div
                 key={item.title}
-                className={`group overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 ${index === 0 ? "md:col-span-2" : ""}`}
+                className={`group overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] ${index === 0 ? "md:col-span-2" : ""}`}
               >
                 <div className={`${index === 0 ? "aspect-[21/8]" : "aspect-[16/10]"} relative w-full overflow-hidden`}>
                   <img
@@ -445,10 +446,10 @@ export default function Page() {
                     alt={item.title}
                     className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-8 lg:p-10">
                     <div className="text-2xl font-semibold tracking-tight lg:text-3xl">{item.title}</div>
-                    <p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-200 lg:text-base">
+                    <p className="mt-3 max-w-2xl text-sm leading-7 text-[#e8dfcf] lg:text-base">
                       {item.subtitle}
                     </p>
                   </div>
@@ -459,50 +460,50 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="booking" className="bg-zinc-50 py-20">
+      <section id="booking" className="bg-[#f4efe6] py-20 text-[#151515]">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid gap-10 lg:grid-cols-[1fr_0.95fr]">
             <div>
-              <div className="text-sm uppercase tracking-[0.28em] text-zinc-500">
+              <div className="text-sm uppercase tracking-[0.28em] text-[#9b7b3f]">
                 Online Booking
               </div>
-              <h2 className="mt-3 text-4xl font-semibold tracking-tight">
+              <h2 className="mt-3 text-4xl font-semibold tracking-tight text-[#111111]">
                 Reserve your trip online and check available dates.
               </h2>
-              <p className="mt-4 max-w-2xl text-lg text-zinc-600">
+              <p className="mt-4 max-w-2xl text-lg text-[#5f5a52]">
                 Guests can choose a service, select a preferred date and time,
                 and send a reservation request directly by email.
               </p>
 
               <div className="mt-8 grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
-                <div className="rounded-[2rem] border border-zinc-200 bg-white p-6 shadow-sm">
+                <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-6 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
                   <div className="flex items-center justify-between">
-                    <div className="text-sm uppercase tracking-[0.2em] text-zinc-500">
+                    <div className="text-sm uppercase tracking-[0.2em] text-[#9b7b3f]">
                       Available Dates
                     </div>
-                    <div className="text-xs text-zinc-400">Calendar View</div>
+                    <div className="text-xs text-[#8a8175]">Calendar View</div>
                   </div>
 
-                  <div className="mt-5 rounded-[1.5rem] border border-zinc-100 p-4">
+                  <div className="mt-5 rounded-[1.5rem] border border-[#e6dccb] bg-white/50 p-4">
                     <div className="mb-4 flex items-center justify-between">
                       <button
                         type="button"
                         onClick={goToPreviousMonth}
-                        className="rounded-full border border-zinc-200 px-3 py-1 text-sm text-zinc-600 transition hover:border-zinc-900 hover:text-zinc-900"
+                        className="rounded-full border border-[#dfd3c0] px-3 py-1 text-sm text-[#5f5a52] transition hover:border-[#c8a96a] hover:text-[#9b7b3f]"
                       >
                         ←
                       </button>
-                      <div className="text-base font-semibold">{monthLabel}</div>
+                      <div className="text-base font-semibold text-[#111111]">{monthLabel}</div>
                       <button
                         type="button"
                         onClick={goToNextMonth}
-                        className="rounded-full border border-zinc-200 px-3 py-1 text-sm text-zinc-600 transition hover:border-zinc-900 hover:text-zinc-900"
+                        className="rounded-full border border-[#dfd3c0] px-3 py-1 text-sm text-[#5f5a52] transition hover:border-[#c8a96a] hover:text-[#9b7b3f]"
                       >
                         →
                       </button>
                     </div>
 
-                    <div className="grid grid-cols-7 gap-2 text-center text-xs font-medium uppercase tracking-[0.16em] text-zinc-400">
+                    <div className="grid grid-cols-7 gap-2 text-center text-xs font-medium uppercase tracking-[0.16em] text-[#8a8175]">
                       {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(
                         (day) => (
                           <div key={day} className="py-2">
@@ -521,14 +522,14 @@ export default function Page() {
                           onClick={() => setSelectedDate(mappedDate.iso)}
                           className={`aspect-square flex items-center justify-center rounded-xl border text-sm font-medium transition ${
                             !mappedDate.isCurrentMonth
-                              ? "cursor-default border-zinc-100 bg-zinc-50 text-zinc-300"
+                              ? "cursor-default border-[#eee5d8] bg-[#f5eee4] text-[#c3b7a6]"
                               : mappedDate.isBooked
-                              ? "cursor-not-allowed border-zinc-100 bg-zinc-100 text-zinc-400"
+                              ? "cursor-not-allowed border-[#eee5d8] bg-[#f0e8dc] text-[#b7aa99]"
                               : mappedDate.available && selectedDate === mappedDate.iso
-                              ? "border-zinc-900 bg-zinc-900 text-white"
+                              ? "border-[#c8a96a] bg-[#c8a96a] text-black shadow-[0_0_22px_rgba(200,169,106,0.3)]"
                               : mappedDate.available
-                              ? "border-zinc-200 bg-white text-zinc-700 hover:border-zinc-900"
-                              : "cursor-not-allowed border-zinc-100 bg-zinc-100 text-zinc-400"
+                              ? "border-[#dfd3c0] bg-white text-[#4c463f] hover:border-[#c8a96a] hover:text-[#9b7b3f]"
+                              : "cursor-not-allowed border-[#eee5d8] bg-[#f0e8dc] text-[#b7aa99]"
                           }`}
                         >
                           {mappedDate.day}
@@ -538,16 +539,16 @@ export default function Page() {
                   </div>
                 </div>
 
-                <div className="rounded-[2rem] border border-zinc-200 bg-white p-6 shadow-sm">
+                <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-6 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
                   <div className="flex items-center justify-between">
-                    <div className="text-sm uppercase tracking-[0.2em] text-zinc-500">
+                    <div className="text-sm uppercase tracking-[0.2em] text-[#9b7b3f]">
                       Preferred Time
                     </div>
-                    <div className="text-xs text-zinc-400">Custom Time</div>
+                    <div className="text-xs text-[#8a8175]">Custom Time</div>
                   </div>
 
-                  <div className="mt-5 rounded-[1.5rem] border border-zinc-100 p-4">
-                    <label className="mb-3 block text-sm font-medium text-zinc-700">
+                  <div className="mt-5 rounded-[1.5rem] border border-[#e6dccb] bg-white/50 p-4">
+                    <label className="mb-3 block text-sm font-medium text-[#4c463f]">
                       Guests can choose any time
                     </label>
                     <input
@@ -555,13 +556,13 @@ export default function Page() {
                       type="time"
                       value={selectedTime}
                       onChange={(e) => setSelectedTime(e.target.value)}
-                      className="h-16 w-full rounded-xl border border-zinc-200 px-4 text-base font-medium text-zinc-700 outline-none transition focus:border-zinc-900"
+                      className="h-16 w-full rounded-xl border border-[#dfd3c0] bg-white px-4 text-base font-medium text-[#111111] outline-none transition focus:border-[#c8a96a]"
                     />
-                    <p className="mt-3 text-xs leading-6 text-zinc-500">
+                    <p className="mt-3 text-xs leading-6 text-[#6f685f]">
                       Choose any available departure time that fits your schedule.
                     </p>
-                    <div className="mt-4 rounded-xl bg-zinc-50 p-4 text-sm text-zinc-600">
-                      <div className="font-medium text-zinc-900">Selected date</div>
+                    <div className="mt-4 rounded-xl border border-[#e6dccb] bg-[#f4efe6] p-4 text-sm text-[#5f5a52]">
+                      <div className="font-medium text-[#111111]">Selected date</div>
                       <div className="mt-1">{selectedDateLabel}</div>
                     </div>
                   </div>
@@ -569,19 +570,19 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-zinc-200 bg-white p-8 shadow-sm">
-              <div className="text-sm uppercase tracking-[0.2em] text-zinc-500">
+            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-8 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
+              <div className="text-sm uppercase tracking-[0.2em] text-[#9b7b3f]">
                 Reservation Form
               </div>
 
               <form onSubmit={handleReservationSubmit} className="mt-6 grid gap-4">
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-zinc-700">
+                  <label className="mb-2 block text-sm font-medium text-[#4c463f]">
                     Service Type
                   </label>
                   <select
                     name="service"
-                    className="w-full rounded-2xl border border-zinc-200 px-4 py-3 text-sm outline-none transition focus:border-zinc-900"
+                    className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a]"
                   >
                     <option>Airport Transfer</option>
                     <option>Private Charter</option>
@@ -592,7 +593,7 @@ export default function Page() {
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-zinc-700">
+                    <label className="mb-2 block text-sm font-medium text-[#4c463f]">
                       Preferred Date
                     </label>
                     <input
@@ -600,11 +601,11 @@ export default function Page() {
                       type="date"
                       value={selectedDate}
                       onChange={(e) => setSelectedDate(e.target.value)}
-                      className="w-full rounded-2xl border border-zinc-200 px-4 py-3 text-sm outline-none transition focus:border-zinc-900"
+                      className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a]"
                     />
                   </div>
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-zinc-700">
+                    <label className="mb-2 block text-sm font-medium text-[#4c463f]">
                       Preferred Time
                     </label>
                     <input
@@ -612,39 +613,39 @@ export default function Page() {
                       type="time"
                       value={selectedTime}
                       onChange={(e) => setSelectedTime(e.target.value)}
-                      className="w-full rounded-2xl border border-zinc-200 px-4 py-3 text-sm outline-none transition focus:border-zinc-900"
+                      className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a]"
                     />
                   </div>
                 </div>
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-zinc-700">
+                    <label className="mb-2 block text-sm font-medium text-[#4c463f]">
                       Pickup Location
                     </label>
                     <input
                       type="text"
                       name="pickup"
                       placeholder="Seattle hotel / airport / address"
-                      className="w-full rounded-2xl border border-zinc-200 px-4 py-3 text-sm outline-none transition focus:border-zinc-900"
+                      className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a]"
                     />
                   </div>
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-zinc-700">
+                    <label className="mb-2 block text-sm font-medium text-[#4c463f]">
                       Destination
                     </label>
                     <input
                       type="text"
                       name="destination"
                       placeholder="Destination"
-                      className="w-full rounded-2xl border border-zinc-200 px-4 py-3 text-sm outline-none transition focus:border-zinc-900"
+                      className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a]"
                     />
                   </div>
                 </div>
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-zinc-700">
+                    <label className="mb-2 block text-sm font-medium text-[#4c463f]">
                       Passenger Count
                     </label>
                     <input
@@ -653,18 +654,18 @@ export default function Page() {
                       min="1"
                       max="15"
                       placeholder="Number of passengers"
-                      className="w-full rounded-2xl border border-zinc-200 px-4 py-3 text-sm outline-none transition focus:border-zinc-900"
+                      className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a]"
                     />
                   </div>
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-zinc-700">
+                    <label className="mb-2 block text-sm font-medium text-[#4c463f]">
                       Guest Name
                     </label>
                     <input
                       name="name"
                       type="text"
                       placeholder="Full name"
-                      className="w-full rounded-2xl border border-zinc-200 px-4 py-3 text-sm outline-none transition focus:border-zinc-900"
+                      className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a]"
                       required
                     />
                   </div>
@@ -672,12 +673,12 @@ export default function Page() {
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-zinc-700">
+                    <label className="mb-2 block text-sm font-medium text-[#4c463f]">
                       Trip Duration
                     </label>
                     <select
                       name="duration"
-                      className="w-full rounded-2xl border border-zinc-200 px-4 py-3 text-sm outline-none transition focus:border-zinc-900"
+                      className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a]"
                     >
                       <option value="">Select duration</option>
                       <option value="1 hour">1 hour</option>
@@ -695,42 +696,42 @@ export default function Page() {
                     </select>
                   </div>
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-zinc-700">
+                    <label className="mb-2 block text-sm font-medium text-[#4c463f]">
                       Contact Phone
                     </label>
                     <input
                       name="phone"
                       type="tel"
                       placeholder="Your phone number"
-                      className="w-full rounded-2xl border border-zinc-200 px-4 py-3 text-sm outline-none transition focus:border-zinc-900"
+                      className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-zinc-700">
+                  <label className="mb-2 block text-sm font-medium text-[#4c463f]">
                     Special Request
                   </label>
                   <textarea
                     name="notes"
                     rows={4}
                     placeholder="Trip details, luggage, child seat, custom itinerary, or notes"
-                    className="w-full rounded-2xl border border-zinc-200 px-4 py-3 text-sm outline-none transition focus:border-zinc-900"
+                    className="w-full rounded-2xl border border-[#dfd3c0] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a]"
                   />
                 </div>
 
-                <div className="rounded-2xl bg-zinc-50 p-5">
-                  <div className="flex items-center justify-between text-sm text-zinc-600">
+                <div className="rounded-2xl border border-[#dfd3c0] bg-[#f4efe6] p-5">
+                  <div className="flex items-center justify-between text-sm text-[#5f5a52]">
                     <span>Booking Request</span>
-                    <span className="font-semibold text-zinc-900">By Email</span>
+                    <span className="font-semibold text-[#9b7b3f]">By Email</span>
                   </div>
-                  <div className="mt-2 text-xs leading-6 text-zinc-500">
+                  <div className="mt-2 text-xs leading-6 text-[#6f685f]">
                     After clicking submit, your email app will open with your booking
                     details pre-filled. Please send the email to complete your request.
                   </div>
                 </div>
 
-                <button className="rounded-2xl bg-zinc-900 px-6 py-3 text-sm font-medium text-white transition hover:opacity-90">
+                <button className="rounded-2xl bg-[#c8a96a] px-6 py-3 text-sm font-semibold text-black shadow-[0_12px_38px_rgba(200,169,106,0.25)] transition hover:bg-[#e5cd8f]">
                   Send Booking Request
                 </button>
               </form>
@@ -739,43 +740,43 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="contact" className="pb-24 pt-20">
+      <section id="contact" className="bg-[#090909] pb-24 pt-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="rounded-[2rem] bg-zinc-950 px-8 py-12 text-white lg:px-12 lg:py-14">
+          <div className="rounded-[2rem] border border-[#c8a96a]/20 bg-[#0f0f0f] px-8 py-12 text-white shadow-[0_25px_90px_rgba(0,0,0,0.35)] lg:px-12 lg:py-14">
             <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
               <div>
-                <div className="text-sm uppercase tracking-[0.28em] text-zinc-400">
+                <div className="text-sm uppercase tracking-[0.28em] text-[#c8a96a]">
                   Contact
                 </div>
                 <h2 className="mt-3 text-4xl font-semibold tracking-tight">
                   Ready to book your next ride?
                 </h2>
-                <p className="mt-4 max-w-xl text-lg leading-8 text-zinc-300">
+                <p className="mt-4 max-w-xl text-lg leading-8 text-[#cfc6b8]">
                   Tell us your pickup location, destination, date, passenger count,
                   and timing. We’ll get back to you with a custom quote.
                 </p>
               </div>
-              <div className="grid gap-4 rounded-[2rem] border border-white/10 bg-white/5 p-6 text-sm">
+              <div className="grid gap-4 rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 text-sm">
                 <div>
-                  <div className="text-zinc-400">Company</div>
+                  <div className="text-[#a9a092]">Company</div>
                   <div className="mt-1 text-base font-medium text-white">
                     Orca Charter Group
                   </div>
                 </div>
                 <div>
-                  <div className="text-zinc-400">Phone</div>
+                  <div className="text-[#a9a092]">Phone</div>
                   <div className="mt-1 text-base font-medium text-white">
                     (206) 422-5336
                   </div>
                 </div>
                 <div>
-                  <div className="text-zinc-400">Email</div>
+                  <div className="text-[#a9a092]">Email</div>
                   <div className="mt-1 text-base font-medium text-white">
                     orcachartergroup@gmail.com
                   </div>
                 </div>
                 <div>
-                  <div className="text-zinc-400">Service Area</div>
+                  <div className="text-[#a9a092]">Service Area</div>
                   <div className="mt-1 text-base font-medium text-white">
                     Seattle · Bellevue · SeaTac · Pacific Northwest
                   </div>
@@ -786,16 +787,16 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="tours" className="bg-white py-20">
+      <section id="tours" className="bg-[#f4efe6] py-20 text-[#151515]">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="max-w-2xl">
-            <div className="text-sm uppercase tracking-[0.28em] text-zinc-500">
+            <div className="text-sm uppercase tracking-[0.28em] text-[#9b7b3f]">
               Seattle National Park Tours
             </div>
-            <h2 className="mt-3 text-4xl font-semibold tracking-tight">
+            <h2 className="mt-3 text-4xl font-semibold tracking-tight text-[#111111]">
               Explore the most iconic national parks near Seattle.
             </h2>
-            <p className="mt-4 text-lg text-zinc-600">
+            <p className="mt-4 text-lg text-[#5f5a52]">
               Join our professionally guided trips to the Pacific Northwest&apos;s
               most beautiful landscapes. You can book a private charter or join a
               shared small-group tour.
@@ -803,55 +804,55 @@ export default function Page() {
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            <div className="rounded-[2rem] border border-zinc-200 p-7 shadow-sm">
-              <div className="text-xl font-semibold">Mt. Rainier National Park</div>
-              <p className="mt-3 text-sm leading-7 text-zinc-600">
+            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-7 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
+              <div className="text-xl font-semibold text-[#111111]">Mt. Rainier National Park</div>
+              <p className="mt-3 text-sm leading-7 text-[#5f5a52]">
                 A classic full-day trip from Seattle featuring scenic highlights
                 such as Longmire, waterfalls, Paradise, and seasonal viewpoints.
               </p>
-              <div className="mt-4 text-sm text-zinc-500">
+              <div className="mt-4 text-sm text-[#9b7b3f]">
                 Sample Join Tour Price: From $148 / adult
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-zinc-200 p-7 shadow-sm">
-              <div className="text-xl font-semibold">Olympic National Park</div>
-              <p className="mt-3 text-sm leading-7 text-zinc-600">
+            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-7 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
+              <div className="text-xl font-semibold text-[#111111]">Olympic National Park</div>
+              <p className="mt-3 text-sm leading-7 text-[#5f5a52]">
                 Travel from Seattle by scenic ferry route and explore mountain and
                 lake highlights in Olympic National Park.
               </p>
-              <div className="mt-4 text-sm text-zinc-500">
+              <div className="mt-4 text-sm text-[#9b7b3f]">
                 Sample Join Tour Price: From $148 / adult
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-zinc-200 p-7 shadow-sm">
-              <div className="text-xl font-semibold">Leavenworth Day Trip</div>
-              <p className="mt-3 text-sm leading-7 text-zinc-600">
+            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-7 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
+              <div className="text-xl font-semibold text-[#111111]">Leavenworth Day Trip</div>
+              <p className="mt-3 text-sm leading-7 text-[#5f5a52]">
                 Visit Washington&apos;s Bavarian-style mountain village for alpine
                 views, shopping, festivals, and charming downtown streets.
               </p>
-              <div className="mt-4 text-sm text-zinc-500">Duration: Full Day</div>
+              <div className="mt-4 text-sm text-[#9b7b3f]">Duration: Full Day</div>
             </div>
 
-            <div className="rounded-[2rem] border border-zinc-200 p-7 shadow-sm">
-              <div className="text-xl font-semibold">
+            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-7 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
+              <div className="text-xl font-semibold text-[#111111]">
                 Snoqualmie Falls &amp; Scenic Waterfalls
               </div>
-              <p className="mt-3 text-sm leading-7 text-zinc-600">
+              <p className="mt-3 text-sm leading-7 text-[#5f5a52]">
                 A relaxed scenic route featuring Snoqualmie Falls and nearby forest
                 or waterfall stops.
               </p>
-              <div className="mt-4 text-sm text-zinc-500">Half Day or Full Day</div>
+              <div className="mt-4 text-sm text-[#9b7b3f]">Half Day or Full Day</div>
             </div>
           </div>
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-[2rem] border border-zinc-200 bg-zinc-50 p-8">
-              <div className="text-xl font-semibold">
+            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-8 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
+              <div className="text-xl font-semibold text-[#111111]">
                 Olympic National Park Sample Itinerary
               </div>
-              <ul className="mt-5 space-y-3 text-sm leading-7 text-zinc-600">
+              <ul className="mt-5 space-y-3 text-sm leading-7 text-[#5f5a52]">
                 <li>• Morning departure from Seattle</li>
                 <li>• Scenic Bainbridge Island ferry crossing</li>
                 <li>• Hood Canal area</li>
@@ -862,11 +863,11 @@ export default function Page() {
               </ul>
             </div>
 
-            <div className="rounded-[2rem] border border-zinc-200 bg-zinc-50 p-8">
-              <div className="text-xl font-semibold">
+            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-8 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
+              <div className="text-xl font-semibold text-[#111111]">
                 Mt. Rainier Sample Itinerary
               </div>
-              <ul className="mt-5 space-y-3 text-sm leading-7 text-zinc-600">
+              <ul className="mt-5 space-y-3 text-sm leading-7 text-[#5f5a52]">
                 <li>• Morning departure from Seattle</li>
                 <li>• Enter Mount Rainier National Park</li>
                 <li>• Historic area stop</li>
@@ -878,14 +879,14 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="mt-16 grid gap-10 rounded-[2rem] border border-zinc-200 bg-zinc-50 p-10 lg:grid-cols-2">
+          <div className="mt-16 grid gap-10 rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-10 shadow-[0_18px_55px_rgba(44,38,28,0.08)] lg:grid-cols-2">
             <div>
-              <div className="text-xl font-semibold">Private Charter Option</div>
-              <p className="mt-4 leading-7 text-zinc-600">
+              <div className="text-xl font-semibold text-[#111111]">Private Charter Option</div>
+              <p className="mt-4 leading-7 text-[#5f5a52]">
                 Book a private trip with your own group and customize the itinerary,
                 departure time, and sightseeing stops.
               </p>
-              <ul className="mt-4 space-y-2 text-sm text-zinc-600">
+              <ul className="mt-4 space-y-2 text-sm text-[#5f5a52]">
                 <li>• Flexible itinerary</li>
                 <li>• Hotel pickup in Seattle or Bellevue</li>
                 <li>• Ideal for families and private groups</li>
@@ -893,12 +894,12 @@ export default function Page() {
             </div>
 
             <div>
-              <div className="text-xl font-semibold">Join a Small Group Tour</div>
-              <p className="mt-4 leading-7 text-zinc-600">
+              <div className="text-xl font-semibold text-[#111111]">Join a Small Group Tour</div>
+              <p className="mt-4 leading-7 text-[#5f5a52]">
                 Travelers can also join shared departures. This option is more
                 affordable and a great way to meet other travelers.
               </p>
-              <ul className="mt-4 space-y-2 text-sm text-zinc-600">
+              <ul className="mt-4 space-y-2 text-sm text-[#5f5a52]">
                 <li>• Fixed daily departures</li>
                 <li>• Small group experience</li>
                 <li>• Professional driver-guide included</li>
@@ -906,9 +907,9 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="mt-12 rounded-[2rem] border border-zinc-200 p-8 text-sm text-zinc-600">
+          <div className="mt-12 rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-8 text-sm text-[#5f5a52] shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
             Transportation for national park tours is provided by our comfortable
-            <span className="font-semibold"> Mercedes Sprinter/Ford Transit 350 </span>, designed for
+            <span className="font-semibold text-[#111111]"> Mercedes Sprinter/Ford Transit 350 </span>, designed for
             premium small-group travel with spacious seating and large windows for
             scenic views.
           </div>
