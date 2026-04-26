@@ -917,4 +917,65 @@ export default function Page() {
       </section>
     </div>
   );
+  <footer className="bg-[#090909] border-t border-[#c8a96a]/20 text-[#cfc6b8]">
+  <div className="mx-auto max-w-7xl px-6 py-12 lg:px-10">
+
+    <div className="grid gap-10 md:grid-cols-3">
+
+      {/* 左侧：品牌 */}
+      <div>
+        <div className="flex items-center gap-3">
+          <img
+            src="/logo.jpeg"
+            alt="OCG Logo"
+            className="h-10 w-auto"
+          />
+          <div className="text-lg font-semibold text-white">
+            Orca Charter Group
+          </div>
+        </div>
+
+        <p className="mt-4 text-sm leading-6 text-[#a9a092]">
+          Premium Mercedes Sprinter transportation in Seattle, designed for airport transfers,
+          private charter, and executive travel.
+        </p>
+      </div>
+
+      {/* 中间：快速导航 */}
+      <div>
+        <div className="text-sm uppercase tracking-[0.2em] text-[#c8a96a]">
+          Quick Links
+        </div>
+
+        <div className="mt-4 flex flex-col gap-2 text-sm">
+          <a href="#services" className="hover:text-[#c8a96a]">Services</a>
+          <a href="#gallery" className="hover:text-[#c8a96a]">Gallery</a>
+          <a href="#tours" className="hover:text-[#c8a96a]">Tours</a>
+          <a href="#pricing" className="hover:text-[#c8a96a]">Pricing</a>
+          <a href="#booking" className="hover:text-[#c8a96a]">Booking</a>
+        </div>
+      </div>
+
+      {/* 右侧：联系方式 */}
+      <div>
+        <div className="text-sm uppercase tracking-[0.2em] text-[#c8a96a]">
+          Contact
+        </div>
+
+        <div className="mt-4 space-y-2 text-sm">
+          <div>(206) 422-5336</div>
+          <div>orcachartergroup@gmail.com</div>
+          <div>Seattle · Bellevue · SeaTac</div>
+        </div>
+      </div>
+
+    </div>
+
+    {/* 底部 */}
+    <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-[#7f786b]">
+      © {new Date().getFullYear()} Orca Charter Group. All rights reserved.
+    </div>
+
+  </div>
+</footer>
 }
