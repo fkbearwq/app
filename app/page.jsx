@@ -458,7 +458,7 @@ export default function Page() {
           </div>
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-[1.5rem] border border-[#dfd3c0] bg-[#fbf8f1] p-5 shadow-[0_18px_55px_rgba(44,38,28,0.08)] sm:p-6 lg:rounded-[2rem] lg:p-8">
+            <div className="rounded-[1.5rem] border border-[#dfd3c0] bg-[#fbf8f1] p-5 shadow-[0_18px_55px_rgba(44,38,28,0.08)] sm:p-6 lg:rounded-[2rem] lg:p-8 overflow-hidden">
               <div className="text-xl font-semibold text-[#111111]">
                 Olympic National Park Sample Itinerary
               </div>
@@ -473,7 +473,7 @@ export default function Page() {
               </ul>
             </div>
 
-            <div className="rounded-[1.5rem] border border-[#dfd3c0] bg-[#fbf8f1] p-5 shadow-[0_18px_55px_rgba(44,38,28,0.08)] sm:p-6 lg:rounded-[2rem] lg:p-8">
+            <div className="rounded-[1.5rem] border border-[#dfd3c0] bg-[#fbf8f1] p-5 shadow-[0_18px_55px_rgba(44,38,28,0.08)] sm:p-6 lg:rounded-[2rem] lg:p-8 overflow-hidden">
               <div className="text-xl font-semibold text-[#111111]">
                 Mt. Rainier Sample Itinerary
               </div>
@@ -636,9 +636,9 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="booking" className="bg-[#f4efe6] py-14 text-[#151515] lg:py-20">
+      <section id="booking" className="bg-[#f4efe6] py-10 text-[#151515] lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid gap-10 lg:grid-cols-[1fr_0.95fr]">
+          <div className="grid min-w-0 gap-6 lg:grid-cols-[1fr_0.95fr] lg:gap-10">
             <div>
               <div className="text-sm uppercase tracking-[0.28em] text-[#9b7b3f]">
                 Online Booking
@@ -651,16 +651,16 @@ export default function Page() {
                 and send a reservation request directly by email.
               </p>
 
-              <div className="mt-6 grid gap-4 xl:grid-cols-[1.2fr_0.8fr] lg:mt-8 lg:gap-6">
-                <div className="rounded-[1.5rem] border border-[#dfd3c0] bg-[#fbf8f1] p-4 shadow-[0_18px_55px_rgba(44,38,28,0.08)] sm:p-5 lg:rounded-[2rem] lg:p-6">
+              <div className="mt-5 grid min-w-0 gap-4 xl:grid-cols-[1.2fr_0.8fr] lg:mt-8 lg:gap-6">
+                <div className="rounded-[1.5rem] border border-[#dfd3c0] bg-[#fbf8f1] p-4 shadow-[0_18px_55px_rgba(44,38,28,0.08)] sm:p-5 lg:rounded-[2rem] lg:p-6 overflow-hidden">
                   <div className="flex items-center justify-between">
-                    <div className="text-sm uppercase tracking-[0.2em] text-[#9b7b3f]">
+                    <div className="text-xs uppercase tracking-[0.22em] text-[#9b7b3f] sm:text-sm sm:tracking-[0.2em]">
                       Available Dates
                     </div>
-                    <div className="text-xs text-[#8a8175]">Calendar View</div>
+                    <div className="text-[11px] text-[#8a8175] sm:text-xs">Calendar View</div>
                   </div>
 
-                  <div className="mt-4 rounded-[1.25rem] border border-[#e6dccb] bg-white/50 p-3 sm:p-4 lg:rounded-[1.5rem]">
+                  <div className="mt-4 overflow-hidden rounded-[1.25rem] border border-[#e6dccb] bg-white/50 p-3 sm:p-4 lg:rounded-[1.5rem]">
                     <div className="mb-3 flex items-center justify-between sm:mb-4">
                       <button
                         type="button"
@@ -715,15 +715,15 @@ export default function Page() {
                   </div>
                 </div>
 
-                <div className="rounded-[1.5rem] border border-[#dfd3c0] bg-[#fbf8f1] p-4 shadow-[0_18px_55px_rgba(44,38,28,0.08)] sm:p-5 lg:rounded-[2rem] lg:p-6">
+                <div className="rounded-[1.5rem] border border-[#dfd3c0] bg-[#fbf8f1] p-4 shadow-[0_18px_55px_rgba(44,38,28,0.08)] sm:p-5 lg:rounded-[2rem] lg:p-6 overflow-hidden">
                   <div className="flex items-center justify-between">
-                    <div className="text-sm uppercase tracking-[0.2em] text-[#9b7b3f]">
+                    <div className="text-xs uppercase tracking-[0.22em] text-[#9b7b3f] sm:text-sm sm:tracking-[0.2em]">
                       Preferred Time
                     </div>
-                    <div className="text-xs text-[#8a8175]">Custom Time</div>
+                    <div className="text-[11px] text-[#8a8175] sm:text-xs">Custom Time</div>
                   </div>
 
-                  <div className="mt-4 rounded-[1.25rem] border border-[#e6dccb] bg-white/50 p-3 sm:p-4 lg:rounded-[1.5rem]">
+                  <div className="mt-4 overflow-hidden rounded-[1.25rem] border border-[#e6dccb] bg-white/50 p-3 sm:p-4 lg:rounded-[1.5rem]">
                     <label className="mb-3 block text-sm font-medium text-[#4c463f]">
                       Guests can choose any time
                     </label>
@@ -732,12 +732,12 @@ export default function Page() {
                       type="time"
                       value={selectedTime}
                       onChange={(e) => setSelectedTime(e.target.value)}
-                      className="h-12 w-full rounded-xl border border-[#dfd3c0] bg-white px-4 text-sm font-medium text-[#111111] outline-none transition focus:border-[#c8a96a] sm:h-14 sm:text-base"
+                      className="block h-11 w-full min-w-0 max-w-full appearance-none box-border rounded-xl border border-[#dfd3c0] bg-white px-3 text-sm font-medium text-[#111111] outline-none transition focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:h-12 sm:px-4"
                     />
                     <p className="mt-3 text-xs leading-6 text-[#6f685f]">
                       Choose any available departure time that fits your schedule.
                     </p>
-                    <div className="mt-4 rounded-xl border border-[#e6dccb] bg-[#f4efe6] p-4 text-sm text-[#5f5a52]">
+                    <div className="mt-3 rounded-xl border border-[#e6dccb] bg-[#f4efe6] p-3 text-sm text-[#5f5a52] sm:mt-4 sm:p-4">
                       <div className="font-medium text-[#111111]">Selected date</div>
                       <div className="mt-1">{selectedDateLabel}</div>
                     </div>
@@ -746,8 +746,8 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="rounded-[1.5rem] border border-[#dfd3c0] bg-[#fbf8f1] p-5 shadow-[0_18px_55px_rgba(44,38,28,0.08)] sm:p-6 lg:rounded-[2rem] lg:p-8">
-              <div className="text-sm uppercase tracking-[0.2em] text-[#9b7b3f]">
+            <div className="rounded-[1.5rem] border border-[#dfd3c0] bg-[#fbf8f1] p-5 shadow-[0_18px_55px_rgba(44,38,28,0.08)] sm:p-6 lg:rounded-[2rem] lg:p-8 overflow-hidden">
+              <div className="text-xs uppercase tracking-[0.22em] text-[#9b7b3f] sm:text-sm sm:tracking-[0.2em]">
                 Reservation Form
               </div>
 
@@ -758,7 +758,7 @@ export default function Page() {
                   </label>
                   <select
                     name="service"
-                    className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
+                    className="block h-11 w-full min-w-0 max-w-full appearance-none box-border rounded-xl border border-[#dfd3c0] bg-white px-3 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:h-12 sm:rounded-2xl sm:px-4"
                   >
                     <option>Airport Transfer</option>
                     <option>Private Charter</option>
@@ -767,7 +767,7 @@ export default function Page() {
                   </select>
                 </div>
 
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid min-w-0 gap-3 sm:grid-cols-2 sm:gap-4">
                   <div>
                     <label className="mb-1.5 block text-sm font-medium text-[#4c463f] sm:mb-2">
                       Preferred Date
@@ -777,7 +777,7 @@ export default function Page() {
                       type="date"
                       value={selectedDate}
                       onChange={(e) => setSelectedDate(e.target.value)}
-                      className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
+                      className="block h-11 w-full min-w-0 max-w-full appearance-none box-border rounded-xl border border-[#dfd3c0] bg-white px-3 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:h-12 sm:rounded-2xl sm:px-4"
                     />
                   </div>
                   <div>
@@ -789,12 +789,12 @@ export default function Page() {
                       type="time"
                       value={selectedTime}
                       onChange={(e) => setSelectedTime(e.target.value)}
-                      className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
+                      className="block h-11 w-full min-w-0 max-w-full appearance-none box-border rounded-xl border border-[#dfd3c0] bg-white px-3 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:h-12 sm:rounded-2xl sm:px-4"
                     />
                   </div>
                 </div>
 
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid min-w-0 gap-3 sm:grid-cols-2 sm:gap-4">
                   <div>
                     <label className="mb-1.5 block text-sm font-medium text-[#4c463f] sm:mb-2">
                       Pickup Location
@@ -803,7 +803,7 @@ export default function Page() {
                       type="text"
                       name="pickup"
                       placeholder="Seattle hotel / airport / address"
-                      className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
+                      className="block h-11 w-full min-w-0 max-w-full appearance-none box-border rounded-xl border border-[#dfd3c0] bg-white px-3 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:h-12 sm:rounded-2xl sm:px-4"
                     />
                   </div>
                   <div>
@@ -814,12 +814,12 @@ export default function Page() {
                       type="text"
                       name="destination"
                       placeholder="Destination"
-                      className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
+                      className="block h-11 w-full min-w-0 max-w-full appearance-none box-border rounded-xl border border-[#dfd3c0] bg-white px-3 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:h-12 sm:rounded-2xl sm:px-4"
                     />
                   </div>
                 </div>
 
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid min-w-0 gap-3 sm:grid-cols-2 sm:gap-4">
                   <div>
                     <label className="mb-1.5 block text-sm font-medium text-[#4c463f] sm:mb-2">
                       Passenger Count
@@ -830,7 +830,7 @@ export default function Page() {
                       min="1"
                       max="15"
                       placeholder="Number of passengers"
-                      className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
+                      className="block h-11 w-full min-w-0 max-w-full appearance-none box-border rounded-xl border border-[#dfd3c0] bg-white px-3 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:h-12 sm:rounded-2xl sm:px-4"
                     />
                   </div>
                   <div>
@@ -841,20 +841,20 @@ export default function Page() {
                       name="name"
                       type="text"
                       placeholder="Full name"
-                      className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
+                      className="block h-11 w-full min-w-0 max-w-full appearance-none box-border rounded-xl border border-[#dfd3c0] bg-white px-3 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:h-12 sm:rounded-2xl sm:px-4"
                       required
                     />
                   </div>
                 </div>
 
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid min-w-0 gap-3 sm:grid-cols-2 sm:gap-4">
                   <div>
                     <label className="mb-1.5 block text-sm font-medium text-[#4c463f] sm:mb-2">
                       Trip Duration
                     </label>
                     <select
                       name="duration"
-                      className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
+                      className="block h-11 w-full min-w-0 max-w-full appearance-none box-border rounded-xl border border-[#dfd3c0] bg-white px-3 text-sm text-[#111111] outline-none transition focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:h-12 sm:rounded-2xl sm:px-4"
                     >
                       <option value="">Select duration</option>
                       <option value="1 hour">1 hour</option>
@@ -879,7 +879,7 @@ export default function Page() {
                       name="phone"
                       type="tel"
                       placeholder="Your phone number"
-                      className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
+                      className="block h-11 w-full min-w-0 max-w-full appearance-none box-border rounded-xl border border-[#dfd3c0] bg-white px-3 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:h-12 sm:rounded-2xl sm:px-4"
                     />
                   </div>
                 </div>
@@ -890,9 +890,9 @@ export default function Page() {
                   </label>
                   <textarea
                     name="notes"
-                    rows={4}
+                    rows={3}
                     placeholder="Trip details, luggage, child seat, custom itinerary, or notes"
-                    className="w-full rounded-xl border border-[#dfd3c0] bg-white px-4 py-2.5 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:py-3"
+                    className="block w-full min-w-0 max-w-full appearance-none box-border rounded-xl border border-[#dfd3c0] bg-white px-3 py-2.5 text-sm text-[#111111] outline-none transition placeholder:text-[#9b9183] focus:border-[#c8a96a] focus:ring-2 focus:ring-[#c8a96a]/15 sm:rounded-2xl sm:px-4"
                   />
                 </div>
 
