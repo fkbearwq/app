@@ -154,13 +154,13 @@ export default function Page() {
     "Black Mercedes Sprinter fleet",
     "Professional driver-guide service",
     "Seattle airport & hotel transportation",
-    "Private charter for 8–14 passengers",
+    "Private charter for 8-14 passengers",
   ];
 
   const pricing = [
     { name: "Airport Transfer", value: "$160+" },
     { name: "Private Charter", value: "Minimum 4 hours booking" },
-    { name: "Extended Day Rate", value: "8–10 hours available" },
+    { name: "Extended Day Rate", value: "8-10 hours available" },
     { name: "Overtime", value: "$100 / hour after 10h" },
   ];
 
@@ -201,7 +201,7 @@ export default function Page() {
               <img
                 src="/logo.jpeg"
                 alt="Orca Charter Group Logo"
-                className="h-14 w-auto object-contain"
+                className="h-16 w-auto object-contain"
               />
             </div>
             <div>
@@ -218,14 +218,14 @@ export default function Page() {
             <a href="#services" className="transition hover:text-[#c8a96a]">
               Services
             </a>
-            <a href="#pricing" className="transition hover:text-[#c8a96a]">
-              Pricing
-            </a>
             <a href="#gallery" className="transition hover:text-[#c8a96a]">
               Gallery
             </a>
-            <a href="#booking" className="transition hover:text-[#c8a96a]">
-              Booking
+            <a href="#tours" className="transition hover:text-[#c8a96a]">
+              Tours
+            </a>
+            <a href="#pricing" className="transition hover:text-[#c8a96a]">
+              Pricing
             </a>
             <a href="#contact" className="transition hover:text-[#c8a96a]">
               Contact
@@ -357,6 +357,175 @@ export default function Page() {
         </div>
       </section>
 
+      <section id="gallery" className="bg-[#090909] py-24 text-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="max-w-2xl">
+            <div className="text-sm uppercase tracking-[0.28em] text-[#c8a96a]">
+              Gallery
+            </div>
+            <h2 className="mt-3 text-4xl font-semibold tracking-tight lg:text-5xl">
+              The look and feel of premium Seattle transportation.
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-[#cfc6b8]">
+              A more visual presentation for airport service, executive travel, and Pacific Northwest experiences.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-2">
+            {galleryImages.map((item, index) => (
+              <div
+                key={item.title}
+                className={`group overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] ${index === 0 ? "md:col-span-2" : ""}`}
+              >
+                <div className={`${index === 0 ? "aspect-[21/8]" : "aspect-[16/10]"} relative w-full overflow-hidden`}>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-8 lg:p-10">
+                    <div className="text-2xl font-semibold tracking-tight lg:text-3xl">{item.title}</div>
+                    <p className="mt-3 max-w-2xl text-sm leading-7 text-[#e8dfcf] lg:text-base">
+                      {item.subtitle}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="tours" className="bg-[#f4efe6] py-20 text-[#151515]">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="max-w-2xl">
+            <div className="text-sm uppercase tracking-[0.28em] text-[#9b7b3f]">
+              Seattle National Park Tours
+            </div>
+            <h2 className="mt-3 text-4xl font-semibold tracking-tight text-[#111111]">
+              Explore the most iconic national parks near Seattle.
+            </h2>
+            <p className="mt-4 text-lg text-[#5f5a52]">
+              Join our professionally guided trips to the Pacific Northwest&apos;s
+              most beautiful landscapes. You can book a private charter or join a
+              shared small-group tour.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-7 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
+              <div className="text-xl font-semibold text-[#111111]">Mt. Rainier National Park</div>
+              <p className="mt-3 text-sm leading-7 text-[#5f5a52]">
+                A classic full-day trip from Seattle featuring scenic highlights
+                such as Longmire, waterfalls, Paradise, and seasonal viewpoints.
+              </p>
+              <div className="mt-4 text-sm text-[#9b7b3f]">
+                Sample Join Tour Price: From $148 / adult
+              </div>
+            </div>
+
+            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-7 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
+              <div className="text-xl font-semibold text-[#111111]">Olympic National Park</div>
+              <p className="mt-3 text-sm leading-7 text-[#5f5a52]">
+                Travel from Seattle by scenic ferry route and explore mountain and
+                lake highlights in Olympic National Park.
+              </p>
+              <div className="mt-4 text-sm text-[#9b7b3f]">
+                Sample Join Tour Price: From $148 / adult
+              </div>
+            </div>
+
+            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-7 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
+              <div className="text-xl font-semibold text-[#111111]">Leavenworth Day Trip</div>
+              <p className="mt-3 text-sm leading-7 text-[#5f5a52]">
+                Visit Washington&apos;s Bavarian-style mountain village for alpine
+                views, shopping, festivals, and charming downtown streets.
+              </p>
+              <div className="mt-4 text-sm text-[#9b7b3f]">Duration: Full Day</div>
+            </div>
+
+            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-7 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
+              <div className="text-xl font-semibold text-[#111111]">
+                Snoqualmie Falls &amp; Scenic Waterfalls
+              </div>
+              <p className="mt-3 text-sm leading-7 text-[#5f5a52]">
+                A relaxed scenic route featuring Snoqualmie Falls and nearby forest
+                or waterfall stops.
+              </p>
+              <div className="mt-4 text-sm text-[#9b7b3f]">Half Day or Full Day</div>
+            </div>
+          </div>
+
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-8 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
+              <div className="text-xl font-semibold text-[#111111]">
+                Olympic National Park Sample Itinerary
+              </div>
+              <ul className="mt-5 space-y-3 text-sm leading-7 text-[#5f5a52]">
+                <li>• Morning departure from Seattle</li>
+                <li>• Scenic Bainbridge Island ferry crossing</li>
+                <li>• Hood Canal area</li>
+                <li>• Enter Olympic National Park</li>
+                <li>• Mountain viewpoint stop</li>
+                <li>• Lake stop</li>
+                <li>• Return to Seattle by evening</li>
+              </ul>
+            </div>
+
+            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-8 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
+              <div className="text-xl font-semibold text-[#111111]">
+                Mt. Rainier Sample Itinerary
+              </div>
+              <ul className="mt-5 space-y-3 text-sm leading-7 text-[#5f5a52]">
+                <li>• Morning departure from Seattle</li>
+                <li>• Enter Mount Rainier National Park</li>
+                <li>• Historic area stop</li>
+                <li>• Waterfall viewpoints</li>
+                <li>• Paradise area</li>
+                <li>• Seasonal lake photo stop</li>
+                <li>• Return to Seattle in the evening</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-16 grid gap-10 rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-10 shadow-[0_18px_55px_rgba(44,38,28,0.08)] lg:grid-cols-2">
+            <div>
+              <div className="text-xl font-semibold text-[#111111]">Private Charter Option</div>
+              <p className="mt-4 leading-7 text-[#5f5a52]">
+                Book a private trip with your own group and customize the itinerary,
+                departure time, and sightseeing stops.
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-[#5f5a52]">
+                <li>• Flexible itinerary</li>
+                <li>• Hotel pickup in Seattle or Bellevue</li>
+                <li>• Ideal for families and private groups</li>
+              </ul>
+            </div>
+
+            <div>
+              <div className="text-xl font-semibold text-[#111111]">Join a Small Group Tour</div>
+              <p className="mt-4 leading-7 text-[#5f5a52]">
+                Travelers can also join shared departures. This option is more
+                affordable and a great way to meet other travelers.
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-[#5f5a52]">
+                <li>• Fixed daily departures</li>
+                <li>• Small group experience</li>
+                <li>• Professional driver-guide included</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-12 rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-8 text-sm text-[#5f5a52] shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
+            Transportation for national park tours is provided by our comfortable
+            <span className="font-semibold text-[#111111]"> Mercedes Sprinter/Ford Transit 350 </span>, designed for
+            premium small-group travel with spacious seating and large windows for
+            scenic views.
+          </div>
+        </div>
+      </section>
+
       <section id="pricing" className="bg-[#f4efe6] py-24 text-[#151515]">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
@@ -420,42 +589,49 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="gallery" className="bg-[#090909] py-24 text-white">
+      <section id="contact" className="bg-[#090909] pb-24 pt-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="max-w-2xl">
-            <div className="text-sm uppercase tracking-[0.28em] text-[#c8a96a]">
-              Gallery
-            </div>
-            <h2 className="mt-3 text-4xl font-semibold tracking-tight lg:text-5xl">
-              The look and feel of premium Seattle transportation.
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-[#cfc6b8]">
-              A more visual presentation for airport service, executive travel, and Pacific Northwest experiences.
-            </p>
-          </div>
-
-          <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {galleryImages.map((item, index) => (
-              <div
-                key={item.title}
-                className={`group overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] ${index === 0 ? "md:col-span-2" : ""}`}
-              >
-                <div className={`${index === 0 ? "aspect-[21/8]" : "aspect-[16/10]"} relative w-full overflow-hidden`}>
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-8 lg:p-10">
-                    <div className="text-2xl font-semibold tracking-tight lg:text-3xl">{item.title}</div>
-                    <p className="mt-3 max-w-2xl text-sm leading-7 text-[#e8dfcf] lg:text-base">
-                      {item.subtitle}
-                    </p>
+          <div className="rounded-[2rem] border border-[#c8a96a]/20 bg-[#0f0f0f] px-8 py-12 text-white shadow-[0_25px_90px_rgba(0,0,0,0.35)] lg:px-12 lg:py-14">
+            <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+              <div>
+                <div className="text-sm uppercase tracking-[0.28em] text-[#c8a96a]">
+                  Contact
+                </div>
+                <h2 className="mt-3 text-4xl font-semibold tracking-tight">
+                  Ready to book your next ride?
+                </h2>
+                <p className="mt-4 max-w-xl text-lg leading-8 text-[#cfc6b8]">
+                  Tell us your pickup location, destination, date, passenger count,
+                  and timing. We&apos;ll get back to you with a custom quote.
+                </p>
+              </div>
+              <div className="grid gap-4 rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 text-sm">
+                <div>
+                  <div className="text-[#a9a092]">Company</div>
+                  <div className="mt-1 text-base font-medium text-white">
+                    Orca Charter Group
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[#a9a092]">Phone</div>
+                  <div className="mt-1 text-base font-medium text-white">
+                    (206) 422-5336
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[#a9a092]">Email</div>
+                  <div className="mt-1 text-base font-medium text-white">
+                    orcachartergroup@gmail.com
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[#a9a092]">Service Area</div>
+                  <div className="mt-1 text-base font-medium text-white">
+                    Seattle · Bellevue · SeaTac · Pacific Northwest
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
@@ -524,12 +700,12 @@ export default function Page() {
                             !mappedDate.isCurrentMonth
                               ? "cursor-default border-[#eee5d8] bg-[#f5eee4] text-[#c3b7a6]"
                               : mappedDate.isBooked
-                              ? "cursor-not-allowed border-[#eee5d8] bg-[#f0e8dc] text-[#b7aa99]"
-                              : mappedDate.available && selectedDate === mappedDate.iso
-                              ? "border-[#c8a96a] bg-[#c8a96a] text-black shadow-[0_0_22px_rgba(200,169,106,0.3)]"
-                              : mappedDate.available
-                              ? "border-[#dfd3c0] bg-white text-[#4c463f] hover:border-[#c8a96a] hover:text-[#9b7b3f]"
-                              : "cursor-not-allowed border-[#eee5d8] bg-[#f0e8dc] text-[#b7aa99]"
+                                ? "cursor-not-allowed border-[#eee5d8] bg-[#f0e8dc] text-[#b7aa99]"
+                                : mappedDate.available && selectedDate === mappedDate.iso
+                                  ? "border-[#c8a96a] bg-[#c8a96a] text-black shadow-[0_0_22px_rgba(200,169,106,0.3)]"
+                                  : mappedDate.available
+                                    ? "border-[#dfd3c0] bg-white text-[#4c463f] hover:border-[#c8a96a] hover:text-[#9b7b3f]"
+                                    : "cursor-not-allowed border-[#eee5d8] bg-[#f0e8dc] text-[#b7aa99]"
                           }`}
                         >
                           {mappedDate.day}
@@ -736,182 +912,6 @@ export default function Page() {
                 </button>
               </form>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="bg-[#090909] pb-24 pt-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="rounded-[2rem] border border-[#c8a96a]/20 bg-[#0f0f0f] px-8 py-12 text-white shadow-[0_25px_90px_rgba(0,0,0,0.35)] lg:px-12 lg:py-14">
-            <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
-              <div>
-                <div className="text-sm uppercase tracking-[0.28em] text-[#c8a96a]">
-                  Contact
-                </div>
-                <h2 className="mt-3 text-4xl font-semibold tracking-tight">
-                  Ready to book your next ride?
-                </h2>
-                <p className="mt-4 max-w-xl text-lg leading-8 text-[#cfc6b8]">
-                  Tell us your pickup location, destination, date, passenger count,
-                  and timing. We’ll get back to you with a custom quote.
-                </p>
-              </div>
-              <div className="grid gap-4 rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 text-sm">
-                <div>
-                  <div className="text-[#a9a092]">Company</div>
-                  <div className="mt-1 text-base font-medium text-white">
-                    Orca Charter Group
-                  </div>
-                </div>
-                <div>
-                  <div className="text-[#a9a092]">Phone</div>
-                  <div className="mt-1 text-base font-medium text-white">
-                    (206) 422-5336
-                  </div>
-                </div>
-                <div>
-                  <div className="text-[#a9a092]">Email</div>
-                  <div className="mt-1 text-base font-medium text-white">
-                    orcachartergroup@gmail.com
-                  </div>
-                </div>
-                <div>
-                  <div className="text-[#a9a092]">Service Area</div>
-                  <div className="mt-1 text-base font-medium text-white">
-                    Seattle · Bellevue · SeaTac · Pacific Northwest
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="tours" className="bg-[#f4efe6] py-20 text-[#151515]">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="max-w-2xl">
-            <div className="text-sm uppercase tracking-[0.28em] text-[#9b7b3f]">
-              Seattle National Park Tours
-            </div>
-            <h2 className="mt-3 text-4xl font-semibold tracking-tight text-[#111111]">
-              Explore the most iconic national parks near Seattle.
-            </h2>
-            <p className="mt-4 text-lg text-[#5f5a52]">
-              Join our professionally guided trips to the Pacific Northwest&apos;s
-              most beautiful landscapes. You can book a private charter or join a
-              shared small-group tour.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-7 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
-              <div className="text-xl font-semibold text-[#111111]">Mt. Rainier National Park</div>
-              <p className="mt-3 text-sm leading-7 text-[#5f5a52]">
-                A classic full-day trip from Seattle featuring scenic highlights
-                such as Longmire, waterfalls, Paradise, and seasonal viewpoints.
-              </p>
-              <div className="mt-4 text-sm text-[#9b7b3f]">
-                Sample Join Tour Price: From $148 / adult
-              </div>
-            </div>
-
-            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-7 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
-              <div className="text-xl font-semibold text-[#111111]">Olympic National Park</div>
-              <p className="mt-3 text-sm leading-7 text-[#5f5a52]">
-                Travel from Seattle by scenic ferry route and explore mountain and
-                lake highlights in Olympic National Park.
-              </p>
-              <div className="mt-4 text-sm text-[#9b7b3f]">
-                Sample Join Tour Price: From $148 / adult
-              </div>
-            </div>
-
-            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-7 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
-              <div className="text-xl font-semibold text-[#111111]">Leavenworth Day Trip</div>
-              <p className="mt-3 text-sm leading-7 text-[#5f5a52]">
-                Visit Washington&apos;s Bavarian-style mountain village for alpine
-                views, shopping, festivals, and charming downtown streets.
-              </p>
-              <div className="mt-4 text-sm text-[#9b7b3f]">Duration: Full Day</div>
-            </div>
-
-            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-7 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
-              <div className="text-xl font-semibold text-[#111111]">
-                Snoqualmie Falls &amp; Scenic Waterfalls
-              </div>
-              <p className="mt-3 text-sm leading-7 text-[#5f5a52]">
-                A relaxed scenic route featuring Snoqualmie Falls and nearby forest
-                or waterfall stops.
-              </p>
-              <div className="mt-4 text-sm text-[#9b7b3f]">Half Day or Full Day</div>
-            </div>
-          </div>
-
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-8 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
-              <div className="text-xl font-semibold text-[#111111]">
-                Olympic National Park Sample Itinerary
-              </div>
-              <ul className="mt-5 space-y-3 text-sm leading-7 text-[#5f5a52]">
-                <li>• Morning departure from Seattle</li>
-                <li>• Scenic Bainbridge Island ferry crossing</li>
-                <li>• Hood Canal area</li>
-                <li>• Enter Olympic National Park</li>
-                <li>• Mountain viewpoint stop</li>
-                <li>• Lake stop</li>
-                <li>• Return to Seattle by evening</li>
-              </ul>
-            </div>
-
-            <div className="rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-8 shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
-              <div className="text-xl font-semibold text-[#111111]">
-                Mt. Rainier Sample Itinerary
-              </div>
-              <ul className="mt-5 space-y-3 text-sm leading-7 text-[#5f5a52]">
-                <li>• Morning departure from Seattle</li>
-                <li>• Enter Mount Rainier National Park</li>
-                <li>• Historic area stop</li>
-                <li>• Waterfall viewpoints</li>
-                <li>• Paradise area</li>
-                <li>• Seasonal lake photo stop</li>
-                <li>• Return to Seattle in the evening</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-16 grid gap-10 rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-10 shadow-[0_18px_55px_rgba(44,38,28,0.08)] lg:grid-cols-2">
-            <div>
-              <div className="text-xl font-semibold text-[#111111]">Private Charter Option</div>
-              <p className="mt-4 leading-7 text-[#5f5a52]">
-                Book a private trip with your own group and customize the itinerary,
-                departure time, and sightseeing stops.
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-[#5f5a52]">
-                <li>• Flexible itinerary</li>
-                <li>• Hotel pickup in Seattle or Bellevue</li>
-                <li>• Ideal for families and private groups</li>
-              </ul>
-            </div>
-
-            <div>
-              <div className="text-xl font-semibold text-[#111111]">Join a Small Group Tour</div>
-              <p className="mt-4 leading-7 text-[#5f5a52]">
-                Travelers can also join shared departures. This option is more
-                affordable and a great way to meet other travelers.
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-[#5f5a52]">
-                <li>• Fixed daily departures</li>
-                <li>• Small group experience</li>
-                <li>• Professional driver-guide included</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-12 rounded-[2rem] border border-[#dfd3c0] bg-[#fbf8f1] p-8 text-sm text-[#5f5a52] shadow-[0_18px_55px_rgba(44,38,28,0.08)]">
-            Transportation for national park tours is provided by our comfortable
-            <span className="font-semibold text-[#111111]"> Mercedes Sprinter/Ford Transit 350 </span>, designed for
-            premium small-group travel with spacious seating and large windows for
-            scenic views.
           </div>
         </div>
       </section>
