@@ -915,9 +915,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-    </div>
-  );
-  <footer className="bg-[#090909] border-t border-[#c8a96a]/20 text-[#cfc6b8]">
+        <footer className="bg-[#090909] border-t border-[#c8a96a]/20 text-[#cfc6b8]">
   <div className="mx-auto max-w-7xl px-6 py-12 lg:px-10">
 
     <div className="grid gap-10 md:grid-cols-3">
@@ -978,4 +976,6 @@ export default function Page() {
 
   </div>
 </footer>
+    </div>
+  );
 }
